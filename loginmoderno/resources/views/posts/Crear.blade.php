@@ -47,7 +47,7 @@
 
             
            
-        <input class="btnEnviar" type="submit" name="register" value="Store">   
+        <input class="btnEnviar" type="submit" name="register" value="Guardar">   
          
     </div>
     <center>
