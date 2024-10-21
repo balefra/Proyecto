@@ -39,7 +39,7 @@
                     <img src="{{ asset('assets/images/iconsformulacion.png') }}" alt="Icono Check">
                     <span>Formulación Proyecto</span>
                 </a>                
-                <a href="/reporte-avance" class="btn btn-green">
+                <a href="/pdf" class="btn btn-green">
                     <img src="{{ asset('assets/images/icons.reporte.png') }}" alt="Icono Reporte">
                     <span>Reporte Último Avance</span>
                 </a>          

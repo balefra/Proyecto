@@ -40,7 +40,7 @@
 
             <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
             <option value="">Categoría de Investigación</option>
-            <option value="fundamental">Propuesta de investigación</option>
+            <option value="fundamental">Propkkkuesta de investigación</option>
             <option value="aplicada">Investigación en Curso</option>
             <option value="desarrollo">Investigación y Desarrollo</option>
              </select>-->
