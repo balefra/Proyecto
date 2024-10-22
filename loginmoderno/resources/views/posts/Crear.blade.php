@@ -5,6 +5,7 @@
 <head>
     <title>Crear Proyecto</title>
     <!-- Required meta tags -->
+    <meta name="csrf-token" content="{{csrf_token()}}">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
@@ -49,41 +50,71 @@
              </select>-->
 <?php
 use App\Models\Departament;
+use App\Models\Municipality;
                           
 $departament= Departament::all();
+
 ?>
 
-        <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
+        <select id="departamentos" name="departamentos" required>
             @foreach ($departament as $row)
             <option value={{$row['id']}}>{{$row['name']}}</option>
             @endforeach
         </select>  
 
 
+<?php
+$municipio = Municipality::whereDepartament_id($row['id']);
 
-    </div>
+?>
+        <select name="municipios" id="municipios"></select>
 
-    
+     <!--   <select id="municipios" name="municipios" required>
+            @foreach ($municipio as $mun)
+            <option value={{$mun['id']}}>{{$mun['name']}}</option>
+            @endforeach
+        </select>  
+        
+-->
+
+    </div>   
 
     <center>
     <a href="{{ url('/home')}}" >Atrás</a>
     <a href="{{ url('/Realidad')}}" >Siguiente</a>
     </center>
    
-    </form>
-    
-   
-    
+    </form>   
 
-    
-    
-     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+    </script>
+    <script>
+        const csrftoken =document.head.querySelector('[name~=csrf-token][content]').content;
+        document.getElementById('departamentos').addEventListener('change', (e)=>{
+            fetch('/municipios',{
+                method: 'POST',
+                body:JSON.stringify({texto : e.target.value}),
+                headers:{
+                    'Content-Type':'application/json',
+                    "X-CSRF-Token":csrftoken
+                }
+            }).then(response =>{
+                return response.json()
+            }).then(data =>{
+                var opciones ="";
+                for (let i in data.lista) {
+                    opciones += '<option value="'+data.lista[i].id+'">'+data.lista[i].name+'</option>';
+                    
+                }
+                document.getElementById("municipios").innerHTML =opciones;
+            }).catch(error =>console.error(error));
+            
+        })
     </script>
 </body>
 

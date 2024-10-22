@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Municipality;
 use Illuminate\Http\Request;
 
+
 class MunicipalityController extends Controller
 {
     /**
@@ -26,9 +27,15 @@ class MunicipalityController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function municipios(Request $request)
     {
-        //
+        $municipios = Municipality::whereId_departament( $request->texto )->get();
+        return response()->json( 
+            [
+                'lista'=> $municipios,
+
+            ]
+             );
     }
 
     /**
@@ -62,4 +69,6 @@ class MunicipalityController extends Controller
     {
         //
     }
+
+
 }

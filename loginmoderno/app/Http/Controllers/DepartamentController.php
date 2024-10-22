@@ -16,7 +16,7 @@ class DepartamentController extends Controller
     {
         
       $departament= Departament::all();
-      return view('posts.crear')->with('departaments',$departament)->name('Crear');
+      return view('posts.crear')->with('departaments',$departament);
     }
 
     /**

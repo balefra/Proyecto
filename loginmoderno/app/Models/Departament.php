@@ -13,4 +13,8 @@ class Departament extends Model
         "id",
         "name"
             ];
+
+    public function municipality(){
+        return $this->hasMany(Municipality::class,'id');
+    }
 }
