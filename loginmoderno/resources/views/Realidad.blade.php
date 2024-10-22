@@ -43,6 +43,7 @@
        
         <center>
     <a href="{{ url('/home')}}"  class="btn5">Atrás</a>
+    <a href="{{ url('#') }}" class="btn5">Guardar</a>
     <a href="{{ url('/Realidad')}}"  class="btn5">Siguiente</a>
     </center>
     </form>
