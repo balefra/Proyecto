@@ -42,8 +42,8 @@
  
        
         <center>
-    <a href="{{ url('/home')}}" >Atrás</a>
-    <a href="{{ url('/Realidad')}}" >Siguiente</a>
+    <a href="{{ url('/home')}}"  class="btn5">Atrás</a>
+    <a href="{{ url('/Realidad')}}"  class="btn5">Siguiente</a>
     </center>
     </form>
 
