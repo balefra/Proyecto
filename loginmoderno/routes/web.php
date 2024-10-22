@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\DepartamentController;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
 Route::get('/', function () {
@@ -29,3 +30,6 @@ Route::get('/pdf', function () {
     
     return $pdf->stream();
 })->name('pdf.generate');
+
+
+?>

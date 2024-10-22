@@ -12,5 +12,8 @@ class Registro extends Model
     protected $fillable = [
         "titleDocument",
         "school",
-        "nameProgram"];
+        "nameProgram",
+        'collaborators',
+        'idCollaborators',
+        'email'];
 }

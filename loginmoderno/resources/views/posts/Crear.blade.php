@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -14,6 +15,7 @@
 </head>
 
 <body>
+    
     <div class="cabecera">
         <h1>Crear Proyecto</h1>
     </div>
@@ -31,25 +33,29 @@
 
             <input type="text" name="nameProgram" id="nameProgram" placeholder="Nombre programa" required>
 
-            <!--<input type="text" id="colaboradores" placeholder="Integrantes" required>
+            <input type="text" name="collaborators" id="collaborators" placeholder="Integrantes" required>
 
-            <input type="text" id="idColaboradores" placeholder="Identificacion colaborales" required>
+            <input type="text" name="idCollaborators" id="idCollaborators" placeholder="Identificacion colaborales" required>
 
-            <input type="email" id="email" placeholder="Correo electronico" required>
+            <input type="email" name="email" id="email" placeholder="Correo electronico" required>
+                       
             
-
-            <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
+            
+           <!-- <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
             <option value="">Categoría de Investigación</option>
             <option value="fundamental">Propkkkuesta de investigación</option>
             <option value="aplicada">Investigación en Curso</option>
             <option value="desarrollo">Investigación y Desarrollo</option>
              </select>-->
 
+<!--{{$departament}}-->
             
            
         <input class="btnEnviar" type="submit" name="register" value="Guardar">   
          
     </div>
+    
+
     <center>
     <a href="{{ url('/home')}}" >Atrás</a>
     <a href="{{ url('/Realidad')}}" >Siguiente</a>
