@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Departament;
-use Illuminate\Contracts\View\View;
+use App\Models\Municipality;
 use Illuminate\Http\Request;
 
-class DepartamentController extends Controller
+class MunicipalityController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-
     public function index()
     {
-        
-      $departament= Departament::all();
-      return view('posts.crear')->with('departaments',$departament)->name('Crear');
+        //
     }
 
     /**
@@ -24,7 +20,7 @@ class DepartamentController extends Controller
      */
     public function create()
     {
-        //return view('posts.crear');
+        //
     }
 
     /**
@@ -38,15 +34,15 @@ class DepartamentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Departament $departament)
+    public function show(Municipality $municipality)
     {
-        
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Departament $departament)
+    public function edit(Municipality $municipality)
     {
         //
     }
@@ -54,7 +50,7 @@ class DepartamentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Departament $departament)
+    public function update(Request $request, Municipality $municipality)
     {
         //
     }
@@ -62,7 +58,7 @@ class DepartamentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Departament $departament)
+    public function destroy(Municipality $municipality)
     {
         //
     }

@@ -47,13 +47,22 @@
             <option value="aplicada">Investigación en Curso</option>
             <option value="desarrollo">Investigación y Desarrollo</option>
              </select>-->
+<?php
+use App\Models\Departament;
+                          
+$departament= Departament::all();
+?>
 
-<!--{{$departament}}-->
-            
-           
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">   
-         
+        <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
+            @foreach ($departament as $row)
+            <option value={{$row['id']}}>{{$row['name']}}</option>
+            @endforeach
+        </select>  
+
+
+
     </div>
+
     
 
     <center>

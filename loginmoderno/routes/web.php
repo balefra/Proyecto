@@ -22,6 +22,7 @@ Route::get('/Realidad', function () {
     return view('Realidad');
 })->name('Realidad');
 
+Route::get('/departamentos', [DepartamentController::class, 'index']);
 
 //pdf
 Route::get('/pdf', function () {
