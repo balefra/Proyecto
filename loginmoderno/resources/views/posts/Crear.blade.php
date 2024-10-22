@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -16,33 +15,34 @@
 </head>
 
 <body>
-    
+
     <div class="cabecera">
         <h1>Crear Proyecto</h1>
     </div>
     <div class="container">
-        <img src="{{ asset('assets/images/iberov2.png') }}"  class="iberov">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov">
         <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc">
     </div>
     <form action="/" method="POST">
-        @csrf        
-            <input type="text" name="titleDocument" id="tittleDocument" placeholder="Titulo del proyecto" required>
-               
-            <!--<input type="date" id="dateDocument" placeholder="Fecha documento" required>-->
-        
-            <input type="text" name="school" id="universidad" placeholder="Universidad" required>
+        @csrf
+        <input type="text" name="titleDocument" id="tittleDocument" placeholder="Titulo del proyecto" required>
 
-            <input type="text" name="nameProgram" id="nameProgram" placeholder="Nombre programa" required>
+        <!--<input type="date" id="dateDocument" placeholder="Fecha documento" required>-->
 
-            <input type="text" name="collaborators" id="collaborators" placeholder="Integrantes" required>
+        <input type="text" name="school" id="universidad" placeholder="Universidad" required>
 
-            <input type="text" name="idCollaborators" id="idCollaborators" placeholder="Identificacion colaborales" required>
+        <input type="text" name="nameProgram" id="nameProgram" placeholder="Nombre programa" required>
 
-            <input type="email" name="email" id="email" placeholder="Correo electronico" required>
-                       
-            
-            
-           <!-- <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
+        <input type="text" name="collaborators" id="collaborators" placeholder="Integrantes" required>
+
+        <input type="text" name="idCollaborators" id="idCollaborators" placeholder="Identificacion colaborales"
+            required>
+
+        <input type="email" name="email" id="email" placeholder="Correo electronico" required>
+
+
+
+        <!-- <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
             <option value="">Categoría de Investigación</option>
             <option value="fundamental">Propkkkuesta de investigación</option>
             <option value="aplicada">Investigación en Curso</option>
@@ -58,9 +58,9 @@ $departament= Departament::all();
 
         <select id="departamentos" name="departamentos" required>
             @foreach ($departament as $row)
-            <option value={{$row['id']}}>{{$row['name']}}</option>
+                <option value={{ $row['id'] }}>{{ $row['name'] }}</option>
             @endforeach
-        </select>  
+        </select>
 
 
 <?php
