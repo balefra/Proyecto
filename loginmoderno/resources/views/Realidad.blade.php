@@ -42,7 +42,7 @@
  
        
         <center>
-    <a href="{{ url('/welcome')}}" >Atrás</a>
+    <a href="{{ url('/home')}}" >Atrás</a>
     <a href="{{ url('/Realidad')}}" >Siguiente</a>
     </center>
     </form>
