@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>B. componente Realidad</title>
+    <title>Realidad</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -48,13 +48,19 @@
             <option value="problematica">Problemática</option>
             <option value="experiencia">Experiencia</option>
         </select>
+ <!-- Textarea compartido para la descripción -->
+ <label for="descripcion">Descripción</label>
+ <textarea rows="7" id="descripcion" name="descripcion"
+     placeholder="Selecciona." required></textarea>
 
-        <label for="descripcion">Descripción</label>
-        <textarea rows="7" id="descripcion" name="descripcion" required></textarea>
+     <button type="button" onclick="mostrarEjemplo()">Ver ejemplo</button>
+
+     <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+     <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
 
         <center>
             <a href="{{ url('/home') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/Realidad') }}" class="btn5">Siguiente</a>
+            <a href="{{ url('/enfoque') }}" class="btn5">Siguiente</a>
             <button type="submit" class="btn5">Guardar</button>
         </center>
     </form>

@@ -27,6 +27,12 @@ Route::get('/Realidad', function () {
     return view('Realidad');
 })->name('Realidad');
 
+Route::get('/enfoque', function () {
+    return view('vistas.enfoque');
+})->name('enfoque');
+
+
+
 Route::get('/departamentos', [DepartamentController::class, 'index']);
 
 //pdf
