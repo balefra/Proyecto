@@ -80,8 +80,8 @@ $municipio = Municipality::whereDepartament_id($row['id']);
     </div>   
 
     <center>
-    <a href="{{ url('/home')}}" >Atrás</a>
-    <a href="{{ url('/Realidad')}}" >Siguiente</a>
+    <a href="{{ url('/home')}}" class= bnt5>Atrás</a>
+    <a href="{{ url('/Realidad')}}" class= bnt5>Siguiente</a>
     </center>
    
     </form>   
