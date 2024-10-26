@@ -19,6 +19,10 @@ return new class extends Migration
             $table->string('collaborators');
             $table->string('idCollaborators');
             $table->string('email');
+            $table->foreignId('id_departament')
+                  ->constrained('departaments');
+            $table->foreignId('id_municipality')
+                  ->constrained('municipality');
             $table->timestamps();
         });
     }

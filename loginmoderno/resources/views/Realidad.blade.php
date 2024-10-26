@@ -23,8 +23,9 @@
     </div>
 
 
-    <form action="{{ route('generar.pdf') }}" method="POST" class="form-container">
+    <form action="/reality" method="POST">
         @csrf
+        <input type="idDocumento" name="idDocumento" id="idDocumento" placeholder="Codigo registro investigación" required>
         <h3>Componente Realidad</h3>
         <p>
             <justify>Apreciado investigador debe seleccionar realidades de los contexto escolares, las cuales se
@@ -57,12 +58,14 @@
 
      <!-- Contenedor donde aparecerá la descripción del ejemplo -->
      <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-
+     
+     <input class="btnEnviar" type="submit" name="register" value="Guardar">   
         <center>
             <a href="{{ url('/home') }}" class="btn5">Atrás</a>
             <a href="{{ url('/enfoque') }}" class="btn5">Siguiente</a>
-            <button type="submit" class="btn5">Guardar</button>
         </center>
+
+        
     </form>
 
     <script>

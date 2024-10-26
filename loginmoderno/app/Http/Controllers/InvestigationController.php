@@ -2,28 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Registro;
-use App\Models\Departament;
-
+use App\Models\Investigation;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+
+class InvestigationController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       
-        }
+        //
+    }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-       
+        //
     }
 
     /**
@@ -31,16 +29,12 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Registro::create([
-            'titleDocument'=> $request->titleDocument,
-            'school'=> $request->school,
-            'nameProgram'=> $request->nameProgram,
-            'collaborators'=> $request->collaborators,
-            'idCollaborators'=> $request->idCollaborators,
-            'email'=> $request->email,
-            'id_departament' => $request->departamentos,
-            'id_municipality' => $request->municipios,
-
+        //
+        Investigation::create([
+            'enfoque'=> $request->enfoque,
+            'tipo'=> $request->tipo,
+            'id_registro'=> $request->idDocumento,
+            
         ]);
         return view('home'); 
     }
@@ -48,7 +42,7 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Investigation $tes)
     {
         //
     }
@@ -56,7 +50,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Investigation $tes)
     {
         //
     }
@@ -64,7 +58,7 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Investigation $tes)
     {
         //
     }
@@ -72,7 +66,7 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Investigation $tes)
     {
         //
     }

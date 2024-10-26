@@ -15,5 +15,12 @@ class Registro extends Model
         "nameProgram",
         'collaborators',
         'idCollaborators',
-        'email'];
+        'email',
+        'id_departament',
+        'id_municipality'];
+
+        public function registro()  {
+            $this->belongsTo(Departament::class,'id_departament');
+            $this->belongsTo(Municipality::class,'id_municipality');
+        }
 }

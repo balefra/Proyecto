@@ -1,17 +1,19 @@
 <?php
 
+use App\Http\Controllers\InvestigationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DepartamentController;
 use App\Http\Controllers\MunicipalityController;
 //use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use App\Http\Controllers\PDFController;
+use App\Http\Controllers\RealityController;
 
 
 
 
 Route::get('/', function () {
-    return view('welcome');
+   return view('welcome'); 
 });
 
 Auth::routes();
@@ -51,5 +53,6 @@ Route::post('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar
 
 //---------------------------CRUD--------------------------------------
 Route::post('/municipios', [MunicipalityController::class,'municipios']);
-
+Route::post('/reality', [RealityController::class,'store']);
+Route::post('/investigation', [InvestigationController::class,'store']);
 ?>

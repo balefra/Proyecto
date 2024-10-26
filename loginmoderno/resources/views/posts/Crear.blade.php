@@ -56,7 +56,8 @@ $departament= Departament::all();
 
 ?>
 
-        <select id="departamentos" name="departamentos" required>
+        <select id="departamentos" name="departamentos"  required>
+            <option value="">Departamento</option>
             @foreach ($departament as $row)
                 <option value={{ $row['id'] }}>{{ $row['name'] }}</option>
             @endforeach
@@ -67,7 +68,9 @@ $departament= Departament::all();
 $municipio = Municipality::whereDepartament_id($row['id']);
 
 ?>
-        <select name="municipios" id="municipios"></select>
+        <select name="municipios" id="municipios">
+            <option value="">Municipio</option>
+        </select>
 
      <!--   <select id="municipios" name="municipios" required>
             @foreach ($municipio as $mun)
@@ -76,7 +79,7 @@ $municipio = Municipality::whereDepartament_id($row['id']);
         </select>  
         
 -->
-
+    <input class="btnEnviar" type="submit" name="register" value="Guardar">   
     </div>   
 
     <center>

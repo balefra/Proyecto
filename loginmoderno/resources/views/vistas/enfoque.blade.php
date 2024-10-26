@@ -19,8 +19,9 @@
         <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc">
     </div>
 
-    <form action="{{ route('generar.pdf') }}" method="POST" class="form-container">
+    <form action="/investigation" method="POST">
         @csrf
+        <input type="idDocumento" name="idDocumento" id="idDocumento" placeholder="Codigo registro investigación" required>
         <h3>Enfoque de Investigación</h3>
         <p>
             <justify>Una vez que ya tiene clara la realidad, debemos seleccionar el enfoque de la investigación. Existen tres tipos de enfoque:</justify>
