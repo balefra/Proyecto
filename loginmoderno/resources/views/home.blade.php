@@ -33,9 +33,9 @@
     <div class="buttons-container">           
                 <a href="{{ url('/crear') }}" class="btn btn-blue">
                     <img src="{{ asset('assets/images/iconsformulacion.png') }}" alt="Icono Check">
-                    <span>Crear Proyecto</span>
+                    <span>Registro propuesta del proyecto</span>
                 </a>  
-                <a href="{{ url('/Realidad') }}" class="btn btn-orange">
+                <a href="{{ url('/formacionproyecto') }}" class="btn btn-orange">
                     <img src="{{ asset('assets/images/iconsformulacion.png') }}" alt="Icono Check">
                     <span>Formulación Proyecto</span>
                 </a>                

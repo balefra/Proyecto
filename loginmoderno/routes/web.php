@@ -36,6 +36,14 @@ Route::get('/Realidad', function () {
     return view('Realidad');
 })->name('Realidad');
 
+Route::get('/tipoestudio', function () {
+    return view('vistas.tipoestudio');
+})->name('tipoestudio');
+
+Route::get('/formacionproyecto', function () {
+    return view('vistas.formacionproyecto');
+})->name('formacionproyecto');
+
 Route::get('/enfoque', function () {
     return view('vistas.enfoque');
 })->name('enfoque');
