@@ -49,15 +49,19 @@
         <img src="{{ asset('assets/images/boton-de-informacion.png') }}" class="info-icon" onclick="mostrarInfo('tipo')"
             alt="Ver definición">
 
+            <!-- descriptivo  -->
         <!-- Campo Tipo de Estudio -->
         <div id="tipoEstudioContainer" style="display: none;">
             <h3>Tipo de Estudio</h3>
             <label for="tipoEstudio">Seleccione el tipo de estudio</label>
             <select id="tipoEstudio" name="tipoEstudio" required>
                 <option value="" disabled selected>Seleccione un tipo de estudio</option>
-                <option value="historico">Histórico o retrospectivo</option>
-                <option value="tdescritivo">Descriptivo (propiamente dicho) o prospectivo</option>
+                <option value="dhistorico">Histórico o retrospectivo</option>
+                <option value="dtdescritivo">Descriptivo (propiamente dicho) o prospectivo</option>
             </select>
+            <button type="button" onclick="mostrarEjemplo()">Ver definición</button>
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+     <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
         </div>
 
         <!-- Campo Resultados Esperados -->
@@ -87,6 +91,45 @@
             </select>
         </div>
 
+
+        <!-- analitico  -->
+        <!-- Campo Tipo de Estudio -->
+        <div id="campoAnalitico1" style="display: none;">
+            <h3>Tipo de Estudio</h3>
+            <label for="tipoEstudio">Seleccione el tipo de estudio</label>
+            <select id="tipoEstudio" name="tipoEstudio" required>
+                <option value="" disabled selected>Seleccione un tipo de estudio</option>
+                <option value="historico">Observacionales:</option>
+                <option value="tdescritivo">Experimentales:</option>
+            </select>
+        </div>
+
+        <!-- Campo Resultados Esperados -->
+        <div id="campoAnalitico2" style="display: none;">
+            <h3>Resultados Esperados</h3>
+            <label for="resultadosEsperados">Seleccione los resultados esperados</label>
+            <select id="resultadosEsperados" name="resultadosEsperados" required>
+                <option value="" disabled selected>Seleccione resultados esperados</option>
+                <option value="historicoImpacto">Observacionales:</option>
+                <option value="historicoBiografia">Experimentales:</option>
+                <option value="historicoCompilacion">Exploratorio:</option>
+                
+            </select>
+        </div>
+
+        <!-- Campo Técnicas de Recolección y Análisis de Información -->
+        <div id="campoAnalitico3" style="display: none;">
+            <h3>Técnicas de Recolección y Análisis de Información</h3>
+            <label for="tecnicas">Seleccione técnicas de recolección y análisis</label>
+            <select id="tecnicas" name="tecnicas" required>
+                <option value="" disabled selected>Seleccione una técnica</option>
+                <option value="fuentesPrimarias">Observacionales:</option>
+                <option value="fuentesPrimarias">Experimentales:</option>
+                <option value="fuentesPrimarias">Exploratorio</option>
+                
+            </select>
+        </div>
+
         <center>
             <a href="{{ url('/home') }}" class="btn5">Atrás</a>
             <a href="#" class="btn5">Siguiente</a>
@@ -101,6 +144,7 @@
     </div>
 
     <script>
+        
         function mostrarInfo(categoria) {
             const infoTexto = document.getElementById("infoTexto");
             const enfoque = document.getElementById("enfoque").value;
@@ -150,18 +194,58 @@
         function mostrarOpcionesTipo() {
             const tipo = document.getElementById("tipo").value;
 
-            // Mostrar todos los campos al seleccionar "Descriptivo"
+            // Mostrar campos específicos para "Descriptivo"
             if (tipo === "descriptivo") {
                 document.getElementById("tipoEstudioContainer").style.display = "block";
                 document.getElementById("resultadosEsperadosContainer").style.display = "block";
                 document.getElementById("tecnicasContainer").style.display = "block";
+
+                // Asegurarse de ocultar los campos de "Analítico"
+                document.getElementById("campoAnalitico1").style.display = "none";
+                document.getElementById("campoAnalitico2").style.display = "none";
+                document.getElementById("campoAnalitico3").style.display = "none";
             }
-             else {
-                // Ocultar todos los campos si no es "Descriptivo"
+            // Mostrar campos específicos para "Analítico"
+            else if (tipo === "analitico") {
+                document.getElementById("campoAnalitico1").style.display = "block";
+                document.getElementById("campoAnalitico2").style.display = "block";
+                document.getElementById("campoAnalitico3").style.display = "block";
+
+                // Asegurarse de ocultar los campos de "Descriptivo"
                 document.getElementById("tipoEstudioContainer").style.display = "none";
                 document.getElementById("resultadosEsperadosContainer").style.display = "none";
                 document.getElementById("tecnicasContainer").style.display = "none";
             }
+            // Ocultar todos los campos si no es ni "Descriptivo" ni "Analítico"
+            else {
+                document.getElementById("tipoEstudioContainer").style.display = "none";
+                document.getElementById("resultadosEsperadosContainer").style.display = "none";
+                document.getElementById("tecnicasContainer").style.display = "none";
+
+                document.getElementById("campoAnalitico1").style.display = "none";
+                document.getElementById("campoAnalitico2").style.display = "none";
+                document.getElementById("campoAnalitico3").style.display = "none";
+            }
+                       
+        }
+        function mostrarEjemplo() {
+            const tipoEstudio = document.getElementById("tipoEstudio").value;
+            const ejemploTexto = document.getElementById("ejemploTexto");
+
+            // Mostrar el texto del ejemplo dependiendo de la categoría seleccionada
+            switch (tipoEstudio) {
+                case "dhistorico":
+                    ejemploTexto.innerHTML ="Indaga sobre hechos del pasado, buscando reconstruir acontecimientos y revelar como se dieron."
+                    break;
+                case "dtdescritivo":
+                    ejemploTexto.innerHTML = "Indaga sobre hechos del presente, recopilando datos del contexto para poder describirlos  e identificar o validar relaciones de significado y sentido a los mismos.";
+                    break;
+                default:
+                    ejemploTexto.innerHTML = "";
+            }
+
+            // Hacer visible el texto del ejemplo
+            ejemploTexto.style.display = "block";
         }
     </script>
 
