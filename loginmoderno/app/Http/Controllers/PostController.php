@@ -67,11 +67,12 @@ class PostController extends Controller
      */
     public function update(Request $request, Registro $registro)
     {
-        // 
+              
         $registro->work()->update([
-            "name_reality"=>$request->categoria,
-            "descrip_reality"=>$request->descripcion
+            "name_reality"=>$request->categoria ,
+            "descrip_reality"=>$request->descripcion 
         ]);
+        return view('Realidad');
     }
 
     /**

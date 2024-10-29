@@ -53,7 +53,7 @@ $prueba = "1";
  <!-- Textarea compartido para la descripción -->
  <label for="descripcion">Descripción</label>
  <textarea rows="7" id="descripcion" name="descripcion"
-     placeholder="Selecciona." required></textarea>
+     placeholder="Selecciona." ></textarea>
 
      <button type="button" onclick="mostrarEjemplo()">Ver ejemplo</button>
 
