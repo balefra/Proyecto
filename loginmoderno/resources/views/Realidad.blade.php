@@ -21,11 +21,12 @@
         <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov">
         <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc">
     </div>
+<?php
+$prueba = "1";
+?>
 
-
-    <form action="/reality" method="POST">
+    <form action="/work/1" method='get'>
         @csrf
-        <input type="idDocumento" name="idDocumento" id="idDocumento" placeholder="Codigo registro investigación" required>
         <h3>Componente Realidad</h3>
         <p>
             <justify>Apreciado investigador debe seleccionar realidades de los contexto escolares, las cuales se

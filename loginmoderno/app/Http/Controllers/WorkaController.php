@@ -1,27 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-use App\Models\Reality;
+use App\Http\Controllers\Controller;
+use App\Models\Work;
 use Illuminate\Http\Request;
 
-class RealityController extends Controller
-{
-    /**
+class WorkaController extends Controller{
+     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-    }
+       
+        }
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
-
+       
     }
 
     /**
@@ -29,20 +28,13 @@ class RealityController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        Reality::create([
-            'name'=> $request->categoria,
-            'description'=> $request->descripcion,
-            'id_registro'=> $request->idDocumento,
-            
-        ]);
-        return view('vistas.enfoque'); 
+       
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Reality $reality)
+    public function show(Work $work)
     {
         //
     }
@@ -50,24 +42,31 @@ class RealityController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Reality $reality)
+    public function edit(Work $work)
     {
         //
+       
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Reality $reality)
+    public function update(Request $request, Work $work)
     {
-        //
+       return $work->update([
+        "name_reality"=>$request->categoria,
+        "descrip_reality"=>$request->descripcion
+    ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Reality $reality)
+    public function destroy(Work $work)
     {
         //
     }
 }
+
+
+?>

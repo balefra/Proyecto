@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Registro;
-use App\Models\Departament;
 
+use App\Models\Registro;
+
+use App\Models\Work;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -31,7 +31,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        Registro::create([
+       $registro = Registro::create([
             'titleDocument'=> $request->titleDocument,
             'school'=> $request->school,
             'nameProgram'=> $request->nameProgram,
@@ -40,15 +40,16 @@ class PostController extends Controller
             'email'=> $request->email,
             'id_departament' => $request->departamentos,
             'id_municipality' => $request->municipios,
+                    ]);
 
-        ]);
+           $registro->work()->create(        );
         return view('home'); 
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Registro $registro)
     {
         //
     }
@@ -56,7 +57,7 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Registro $registro)
     {
         //
     }
@@ -64,15 +65,19 @@ class PostController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Registro $registro)
     {
-        //
+        // 
+        $registro->work()->update([
+            "name_reality"=>$request->categoria,
+            "descrip_reality"=>$request->descripcion
+        ]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Registro $registro)
     {
         //
     }

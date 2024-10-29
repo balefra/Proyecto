@@ -19,10 +19,15 @@ return new class extends Migration
             $table->string('collaborators');
             $table->string('idCollaborators');
             $table->string('email');
-            $table->foreignId('id_departament')
-                  ->constrained('departaments');
-            $table->foreignId('id_municipality')
-                  ->constrained('municipality');
+            $table->unsignedBigInteger('id_departament')->nullable();
+            $table->foreign('id_departament')
+                    ->references('id')
+                    ->on('departaments');
+                    $table->unsignedBigInteger('id_municipality')->nullable();
+                    $table->foreign('id_municipality')
+                            ->references('id')
+                            ->on('municipalities');
+            
             $table->timestamps();
         });
     }

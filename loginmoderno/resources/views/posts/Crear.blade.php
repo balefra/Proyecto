@@ -64,21 +64,11 @@ $departament= Departament::all();
         </select>
 
 
-<?php
-$municipio = Municipality::whereDepartament_id($row['id']);
-
-?>
         <select name="municipios" id="municipios">
             <option value="">Municipio</option>
         </select>
 
-     <!--   <select id="municipios" name="municipios" required>
-            @foreach ($municipio as $mun)
-            <option value={{$mun['id']}}>{{$mun['name']}}</option>
-            @endforeach
-        </select>  
-        
--->
+   
     <input class="btnEnviar" type="submit" name="register" value="Guardar">   
     </div>   
 

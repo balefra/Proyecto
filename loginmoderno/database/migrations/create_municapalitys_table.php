@@ -15,9 +15,12 @@ return new class extends Migration
         Schema::create('municipalities', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            //$table->unsignedBigInteger('id_departament')->unique();
             $table->foreignId('id_departament')
-                  ->constrained('departaments')
-                  ->nullOnDelete();
+                    ->references('id')
+                    ->on('departaments')
+                    ->onDelete('cascade')
+                    ->onUpdate('cascade');
             
         });
     }
