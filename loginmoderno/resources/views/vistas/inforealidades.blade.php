@@ -29,12 +29,16 @@
         </div>
     
         <!-- Texto en el centro -->
-        <div class="texto-centro">
-            <p>La primera fase en el desarrollo de un proyecto es la formulación de este, para ello es importante tener en cuenta las siguientes apreciaciones:</p>
-            <p><strong>Objeto de estudio e investigación en educación:</strong></p>
-            <p>El objeto de estudio e investigación en educación son la(s) realidad(es) que se presenta(n) en los contextos educativos, también denominados contextos escolares.</p>
-            <p>Al respecto partimos por tanto del concepto de realidad como:</p>
-            <blockquote>“aquello que acontece de manera verdadera o cierta, en oposición a lo que pertenece al terreno de la fantasía, la imaginación o la ilusión. Lo real, por lo tanto, es lo que existe efectivamente.”</blockquote>
+        <div class="texto-left">
+            <p>Para efectos prácticos las realidades escolares se tipifican en:</p>
+            <ol>
+                <li>Fenmenos<button type="button" class="btn-ej">Ejemplo</button><button type="button"class="btn-ej">Definición</button></li>
+                <li>Problemáticas</li>
+                <li>Necesidades</li>
+                <li>Experiencias o practicas educativas (o escolares)</li>
+              </ol>
+         
+        
        
         <!-- Botones en la parte inferior -->
         <center>

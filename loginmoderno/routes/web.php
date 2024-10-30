@@ -44,6 +44,10 @@ Route::get('/formacionproyecto', function () {
     return view('vistas.formacionproyecto');
 })->name('formacionproyecto');
 
+Route::get('/inforealidades', function () {
+    return view('vistas.inforealidades');
+})->name('inforealidades');
+
 Route::get('/enfoque', function () {
     return view('vistas.enfoque');
 })->name('enfoque');

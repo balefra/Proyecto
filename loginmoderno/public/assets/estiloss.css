@@ -24,6 +24,12 @@ form{
     position: absolute;
     float: left;
     left: 220px;
+     /* Estilos para el cuadro blanco */
+     background-color: white; /* Fondo blanco */
+     border: 1px solid #ccc; /* Borde gris claro */
+     border-radius: 8px; /* Bordes redondeados */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+     
     
 }
 
