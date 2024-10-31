@@ -64,6 +64,19 @@ Route::get('/enfoque', function () {
     return view('vistas.enfoque');
 })->name('enfoque');
 
+// vista dependiendo de tipo de investigación
+
+Route::get('/vistaAnalitico', function () {
+    return view('analitico.vistaAnalitico');
+})->name('vistaAnalitico');
+
+Route::get('/vistaIntervencion', function () {
+    return view('intervencion.vistaIntervencion');
+})->name('vistaIntervencion');
+
+Route::get('/vistaDescriptivo', function () {
+    return view('descritivo.vistaDescriptivo');
+})->name('vistaDescriptivo');
 
 
 Route::get('/departamentos', [DepartamentController::class, 'index']);

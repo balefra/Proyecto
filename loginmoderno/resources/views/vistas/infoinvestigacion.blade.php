@@ -53,8 +53,8 @@
 
         <!-- Botones en la parte inferior -->
         <center>
-            <a href="{{ url('/inforealidades') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/infoinvestigacion') }}" class="btn5">Siguiente</a>
+            <a href="{{ url('/infoenfoque') }}" class="btn5">Atrás</a>
+            <a onclick="redirigir()" class="btn5">Siguiente</a>
         </center>
 
     </form>
@@ -65,7 +65,7 @@
 
 
 <script>
-   function mostrarEjemplo() {
+    function mostrarEjemplo() {
         const investigacion = document.getElementById("investigacion").value;
         const ejemploTexto = document.getElementById("ejemploTexto");
 
@@ -74,20 +74,36 @@
             case "analitico":
                 ejemploTexto.innerHTML =
                     "El tipo analítico o empírico-analítico es un modelo  basado en la experimentación directa y/o  la lógica empírica, se caracteriza por descomponer la realidad a investigar en sus partes para poder comprenderlo.";
-                    break;
+                break;
             case "descriptivo":
-                ejemploTexto.innerHTML ="El Tipo descriptiva consiste en describir y evaluar ciertas características de una realidad en el tiempo, intentando descubrir relaciones de significado y sentido entre las mismas o variables asociadas con estas características. La descripción depende en gran medida de los anteojos conceptuales del investigador." +
-                         "<br><br>Nota: no se puede confundir un estudio descriptivo con sencillamente relatar una realidad en el tiempo sin identificar relaciones.";
+                ejemploTexto.innerHTML =
+                    "El Tipo descriptiva consiste en describir y evaluar ciertas características de una realidad en el tiempo, intentando descubrir relaciones de significado y sentido entre las mismas o variables asociadas con estas características. La descripción depende en gran medida de los anteojos conceptuales del investigador." +
+                    "<br><br>Nota: no se puede confundir un estudio descriptivo con sencillamente relatar una realidad en el tiempo sin identificar relaciones.";
                 break;
             case "intervencion":
-                ejemploTexto.innerHTML = "El tipo de investigación aplicada cuyo propósito es transformar la realidad mediante la reflexión, toma de conciencia y empoderamiento de los sujetos y organizaciones y/o mediante los diseños de soluciones innovadoras que resuelvan problemas educativos o suplan necesidades.";
+                ejemploTexto.innerHTML =
+                    "El tipo de investigación aplicada cuyo propósito es transformar la realidad mediante la reflexión, toma de conciencia y empoderamiento de los sujetos y organizaciones y/o mediante los diseños de soluciones innovadoras que resuelvan problemas educativos o suplan necesidades.";
                 break;
-             default:
+            default:
                 ejemploTexto.innerHTML = "";
         }
 
         // Hacer visible el texto del ejemplo
         ejemploTexto.style.display = "block";
+    }
+    function redirigir() {
+        const investigacion = document.getElementById("investigacion").value;
+
+        // Redirigir según el valor seleccionado
+        if (investigacion === "analitico") {
+            window.location.href = "{{ url('/vistaAnalitico') }}";
+        } else if (investigacion === "descriptivo") {
+            window.location.href = "{{ url('/vistaDescriptivo') }}";
+        } else if (investigacion === "intervencion") {
+            window.location.href = "{{ url('/vistaIntervencion') }}";
+        } else {
+            alert("Por favor, selecciona un tipo de investigación.");
+        }
     }
 </script>
 
