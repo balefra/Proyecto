@@ -98,10 +98,39 @@ h1 {
     font-size: 1.2em;
     color: #333;
     /* Estilos para el cuadro blanco */
-    background-color: white; /* Fondo blanco */
+    background-color: rgb(255, 255, 255); /* Fondo blanco */
     border: 1px solid #ccc; /* Borde gris claro */
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+
+.texto-just1 {
+  max-width: 800px;
+  text-align: justify;
+  margin: auto;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #333;
+  /* Estilos para el cuadro blanco */
+  background-color: rgb(246, 226, 49); /* Fondo blanco */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.texto-just2 {
+  max-width: 800px;
+  text-align: justify;
+  margin: auto;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #333;
+  /* Estilos para el cuadro blanco */
+  background-color: rgba(246, 99, 99, 0.722); /* Fondo blanco */
+  border: 1px solid #ccc; /* Borde gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
 /* Botones */
@@ -169,7 +198,18 @@ h1 {
     position: relative;
     left: 45%;
     margin-right: 10px;
-  }
+    background-color: rgb(246, 226, 49); /* Color de fondo verde */
+    color: rgb(0, 0, 0); /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Icono de puntero al pasar */
+}
+
+.btn-ej:hover {
+    background-color: #45a049; /* Color de fondo más oscuro al pasar el cursor */
+}
 
   .btn-ej1{
     position: relative;
@@ -189,9 +229,20 @@ h1 {
   /*btonm ejemplo */
   .btn-def{
     position: relative;
-    left: 55%;
+    left: 45%;
     margin-right: 10px;
-  }
+    background-color: rgba(246, 99, 99, 0.722); /* Color de fondo verde */
+    color: rgb(0, 0, 0); /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 14px; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Icono de puntero al pasar */
+}
+
+.btn-def:hover {
+    background-color: #45a049; /* Color de fondo más oscuro al pasar el cursor */
+}
 
   .btn-def1{
     position: relative;
@@ -245,4 +296,21 @@ input{
     outline: none;
     font-size: 16px;
     margin-top: 10px;
+}
+
+
+/*boton cerrar */
+.btn-close {
+  background-color: #e49a95; /* Rojo para indicar cierre */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.btn-close:hover {
+  background-color: #d32f2f; /* Rojo oscuro al pasar el cursor */
 }

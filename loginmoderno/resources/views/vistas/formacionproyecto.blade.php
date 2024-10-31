@@ -24,12 +24,11 @@
         <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="logo-derecha">
     </div>
     <body>
-        <div class="cabecera">
-            <h1>Formulación del proyecto</h1>
-        </div>
+       
     
         <!-- Texto en el centro -->
         <div class="texto-centro">
+            <h1>Formulación del proyecto</h1>
             <p>La primera fase en el desarrollo de un proyecto es la formulación de este, para ello es importante tener en cuenta las siguientes apreciaciones:</p>
             <p><strong>Objeto de estudio e investigación en educación:</strong></p>
             <p>El objeto de estudio e investigación en educación son la(s) realidad(es) que se presenta(n) en los contextos educativos, también denominados contextos escolares.</p>
