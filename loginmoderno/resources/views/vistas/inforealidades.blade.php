@@ -27,23 +27,25 @@
         <div class="cabecera">
             <h1>Formulación del proyecto</h1>
         </div>
+        <br/>
     
         <!-- Texto en el centro -->
         <div class="texto-left">
-            <p>Para efectos prácticos las realidades escolares se tipifican en:</p>
+            <p>Para efectos prácticos las realidades escolares se tipifican en:  </p>
+            <br/>
             <ol>
-                <li>Fenmenos<button type="button" class="btn-ej">Ejemplo</button><button type="button"class="btn-ej">Definición</button></li>
-                <li>Problemáticas</li>
-                <li>Necesidades</li>
-                <li>Experiencias o practicas educativas (o escolares)</li>
+                <li>Fenómenos</li> <button type="button" class="btn-ej">Ejemplo</button><button type="button"class="btn-def">Definición</button>
+                <li>Problemáticas</li> <button type="button" class="btn-ej">Ejemplo</button><button type="button"class="btn-def">Definición</button>
+                <li>Necesidades</li><button type="button" class="btn-ej">Ejemplo</button><button type="button"class="btn-def">Definición</button>
+                <li>Experiencias o practicas educativas (o escolares)</li><button type="button" class="btn-ej">Ejemplo</button><button type="button"class="btn-def">Definición</button>
               </ol>
          
         
        
         <!-- Botones en la parte inferior -->
         <center>
-            <a href="{{ url('/home') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/Realidad') }}" class="btn5">Siguiente</a>
+            <a href="{{ url('/formacionproyecto') }}" class="btn5">Atrás</a>
+            <a href="{{ url('/informacionasociadas') }}" class="btn5">Siguiente</a>
         </center>
     
         </div>

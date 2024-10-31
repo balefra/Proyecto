@@ -48,6 +48,18 @@ Route::get('/inforealidades', function () {
     return view('vistas.inforealidades');
 })->name('inforealidades');
 
+Route::get('/informacionasociadas', function () {
+    return view('vistas.informacionasociadas');
+})->name('informacionasociadas');
+
+Route::get('/infoenfoque', function () {
+    return view('vistas.infoenfoque');
+})->name('infoenfoque');
+
+Route::get('/infoinvestigacion', function () {
+    return view('vistas.infoinvestigacion');
+})->name('infoinvestigacion');
+
 Route::get('/enfoque', function () {
     return view('vistas.enfoque');
 })->name('enfoque');

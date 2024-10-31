@@ -89,6 +89,21 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
 
+/* Texto justificado */
+.texto-just {
+    max-width: 800px;
+    text-align: justify;
+    margin: auto;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #333;
+    /* Estilos para el cuadro blanco */
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
 /* Botones */
 .botones {
     display: flex;
@@ -149,14 +164,6 @@ h1 {
   }
 
   
-
-  /* parrafo*/
-
-  p{
-    text-align: left;
-  }
-
-
   /*btonm ejemplo */
   .btn-ej{
     position: relative;
@@ -164,9 +171,78 @@ h1 {
     margin-right: 10px;
   }
 
+  .btn-ej1{
+    position: relative;
+    left: 39%;
+    margin-right: 10px;
+  }
+
+  .btn-ej2{
+    position: relative;
+    left: 40%;
+    margin-right: 10px;
+  }
+
+  
+
+
   /*btonm ejemplo */
   .btn-def{
     position: relative;
     left: 55%;
     margin-right: 10px;
   }
+
+  .btn-def1{
+    position: relative;
+    left: 49%;
+    margin-right: 10px;
+  }
+
+  .btn-def2{
+    position: relative;
+    left: 50%;
+    margin-right: 10px;
+  }
+
+
+
+  /*seleccion*/
+
+  select{
+    
+    color: #0d0d0d;
+    padding: 20px 15px 20px 60px;
+    width: 100%;
+    border-radius: 25px;
+    border: 10;
+    border-color: #0d0d0d;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+
+/* boton enviar */
+
+.btnEnviar{
+    padding: 20px;
+    color: #4e79f0;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgba(57, 97, 97, 0.226);
+}
+
+
+input{
+    color: #0d0d0d;
+    padding: 20px 15px 20px 60px;
+    width: 100%;
+    border-radius: 25px;
+    border: 0;
+    outline: none;
+    font-size: 16px;
+    margin-top: 10px;
+}

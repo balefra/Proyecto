@@ -67,9 +67,10 @@ select{
     
     color: #0d0d0d;
     padding: 20px 15px 20px 60px;
-    width: 90%;
+    width: 100%;
     border-radius: 25px;
-    border: 0;
+    border: 10;
+    border-color: #0d0d0d;
     outline: none;
     font-size: 16px;
     margin-top: 10px;
@@ -101,7 +102,8 @@ input{
     padding: 20px 15px 20px 60px;
     width: 100%;
     border-radius: 25px;
-    border: 0;
+    border: 10;
+    border-color: #0d0d0d;
     outline: none;
     font-size: 16px;
     margin-top: 10px;
@@ -291,4 +293,20 @@ a{
     cursor: pointer;
     margin-left: 10px;
     vertical-align: middle;
+}
+
+
+/* Texto left */
+.texto-left {
+    max-width: 800px;
+    text-align: left;
+    margin: auto;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #333;
+    /* Estilos para el cuadro blanco */
+    background-color: white; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
