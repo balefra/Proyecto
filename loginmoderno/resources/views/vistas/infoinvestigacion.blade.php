@@ -20,7 +20,7 @@
 
 <body>
 
-    <form class="texto-just">
+    <form class="texto-just" action="/workInvesti/1" method='get'>
 
         <h1>Segundo paso de la formulación</h1>
 

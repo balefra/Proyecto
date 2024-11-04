@@ -21,7 +21,7 @@
 <body>
 
     <!-- Texto en el centro -->
-    <form class="texto-just">
+    <form class="texto-just" action="/workReality/1" method='get'>
 
         <h1>Primer paso de la formulación</h1>
 

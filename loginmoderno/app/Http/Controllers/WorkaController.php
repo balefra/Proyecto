@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Work;
@@ -51,7 +51,7 @@ class WorkaController extends Controller{
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Work $work)
+    public function updateReality(Request $request, Work $work)
     {
        return $work->update([
         "name_reality"=>$request->categoria,
@@ -59,8 +59,12 @@ class WorkaController extends Controller{
     ]);
     }
 
-    /**
-     * Remove the specified resource from storage.
+  
+     
+
+
+     /**
+     * Update the specified resource in storage.
      */
     public function destroy(Work $work)
     {

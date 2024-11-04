@@ -28,7 +28,9 @@ Route::get('/crear', function (){
 //------------------------CRUD REGISTRO----------------------------------
 Route::post('/', [PostController::class, 'store']);
 
-Route::get('/work/{registro}',[PostController::class,'update']);
+Route::get('/workReality/{registro}',[PostController::class,'update']);
+Route::get('/workEnfoque/{registro}',[PostController::class,'updateEnfoque']);
+Route::get('/workInvesti/{registro}',[PostController::class,'updateInvesti']);
 
 
 

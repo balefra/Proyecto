@@ -72,7 +72,29 @@ class PostController extends Controller
             "name_reality"=>$request->categoria ,
             "descrip_reality"=>$request->descripcion 
         ]);
-        return view('Realidad');
+          return view('vistas.infoenfoque');
+    }
+
+
+    public function updateEnfoque(Request $request, Registro $registro)
+    {
+        $registro->work()->update([
+            "name_enfoque"=>$request->enfoque 
+        ]);
+        return view('vistas.infoinvestigacion');  
+       
+        
+    }
+
+
+    public function updateInvesti(Request $request, Registro $registro)
+    {
+        $registro->work()->update([
+            "type_investigation"=>$request->investigacion 
+        ]);
+        return view('vistas.infoinvestigacion');  
+       
+        
     }
 
     /**
