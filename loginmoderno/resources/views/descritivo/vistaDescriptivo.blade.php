@@ -59,10 +59,10 @@
         <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
             <option value="">Seleccione un tipo de estudio</option>
             <option value="estudio"> Estudio de impacto: </option>
-            <option value="biografias">Biografía:</option>
-            <option value="Compilacion">Compilación de experiencia(s):</option>
-            <option value="narrativas">Narrativas:</option>
-            <option value="descriptivo">Descriptivo:</option>
+            <option value="biografias">Biografía</option>
+            <option value="Compilacion">Compilación de experiencia(s)</option>
+            <option value="narrativas">Narrativas</option>
+            <option value="descriptivo">Descriptivo</option>
         </select>
         <br />
         <br />
@@ -85,9 +85,9 @@
         <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
             <option value="">Seleccione un tipo de estudio</option>
             <option value="estudio"> Estudio de impacto: </option>
-            <option value="biografias">Biografía:</option>
-            <option value="Compilacion">Compilación de experiencia(s):</option>
-            <option value="narrativas">Narrativas:</option>
+            <option value="biografias">Biografía</option>
+            <option value="Compilacion">Compilación de experiencia(s)</option>
+            <option value="narrativas">Narrativas</option>
         </select>
         <br />
         <br />

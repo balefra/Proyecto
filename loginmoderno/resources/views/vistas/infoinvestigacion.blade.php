@@ -26,8 +26,9 @@
 
         <br />
         <br />
-        <p> A continuación, es importante reconocer y seleccionar el tipo de investigación
-            Los tipos de investigación son:
+        <p> A continuación, es importante reconocer y seleccionar el tipo de investigación </p>
+        <br />
+        <p>  Los tipos de investigación son:
         </p>
         <br />
 

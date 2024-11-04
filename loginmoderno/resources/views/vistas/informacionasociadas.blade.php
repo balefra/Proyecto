@@ -32,8 +32,8 @@
         <br />
 
 
-        
-        <select id="categoria" name="categoria"  onclick="mostrarEjemplo()"  required>
+
+        <select id="categoria" name="categoria" onclick="mostrarEjemplo()" required>
             <option value="">Seleccione una realidad</option>
             <option value="fenomeno">Fenómeno</option>
             <option value="necesidad">Necesidad</option>
@@ -42,18 +42,21 @@
         </select>
         <br />
         <br />
-
+        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+        <em>
+            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
+        </em>
+        <br />
+        <br />
         <p>Teniendo en cuenta su selección, por favor redacte la formulación de su realidad. </p>
         <br />
 
-         <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-         <em>
-        <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-         </em>
-        <textarea rows="7" cols="82" id="descripcion" name="descripcion" placeholder="De acuerdo al ejemplo, redacte aqui."></textarea>
+
+        <textarea rows="7" cols="82" id="descripcion" name="descripcion"
+            placeholder="De acuerdo al ejemplo, redacte aqui."></textarea>
 
         <!-- Guardar datos -->
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">   
+        <input class="btnEnviar" type="submit" name="register" value="Guardar">
 
         <!-- Botones en la parte inferior -->
         <center>
@@ -69,8 +72,6 @@
 
 
 <script>
-    
-
     function mostrarEjemplo() {
         const categoria = document.getElementById("categoria").value;
         const ejemploTexto = document.getElementById("ejemploTexto");
