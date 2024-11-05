@@ -18,7 +18,8 @@ class Registro extends Model
         'idCollaborators',
         'email',
         'id_departament',
-        'id_municipality'];
+        'id_municipality',
+        'id_user'];
 
         public function registro()  {
             $this->belongsTo(Departament::class,'id_departament');
@@ -29,4 +30,5 @@ class Registro extends Model
         public function work(){
             return $this->hasOne(Work::class, 'registro_id','id');
         }
+
 }

@@ -25,12 +25,6 @@ Route::get('/crear', function (){
     return view('posts.crear');
 })->name('Crear');
 
-//------------------------CRUD REGISTRO----------------------------------
-Route::post('/', [PostController::class, 'store']);
-
-Route::get('/workReality/{registro}',[PostController::class,'update']);
-Route::get('/workEnfoque/{registro}',[PostController::class,'updateEnfoque']);
-Route::get('/workInvesti/{registro}',[PostController::class,'updateInvesti']);
 
 
 
@@ -80,6 +74,9 @@ Route::get('/vistaDescriptivo', function () {
     return view('descritivo.vistaDescriptivo');
 })->name('vistaDescriptivo');
 
+Route::get('/buscarProyecto', function () {
+    return view('formula.buscarProyecto');
+})->name('buscarProyecto');
 
 Route::get('/departamentos', [DepartamentController::class, 'index']);
 
@@ -99,6 +96,16 @@ Route::post('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar
 
 //---------------------------CRUD Municipios--------------------------------------
 Route::post('/municipios', [MunicipalityController::class,'municipios']);
+
+
+//------------------------CRUD REGISTRO----------------------------------
+Route::post('/', [PostController::class, 'store']);
+
+Route::get('/workReality/{registro}',[PostController::class,'update']);
+Route::get('/workEnfoque/{registro}',[PostController::class,'updateEnfoque']);
+Route::get('/workInvesti/{registro}',[PostController::class,'updateInvesti']);
+
+Route::post('/proyecto',[PostController::class,'buscarPorCorreo']);
 
 
 ?>
