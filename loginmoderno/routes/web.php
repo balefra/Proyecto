@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/crear', function (){
-    return view('posts.crear');
+    return view('posts.Crear');
 })->name('Crear');
 
 //------------------------CRUD REGISTRO----------------------------------
