@@ -23,12 +23,11 @@ return new class extends Migration
             $table->foreign('id_departament')
                     ->references('id')
                     ->on('departaments');
-                    $table->unsignedBigInteger('id_municipality')->nullable();
-                    $table->foreign('id_municipality')
-                            ->references('id')
-                            ->on('municipalities');
-            
-            $table->timestamps();
+            $table->unsignedBigInteger('id_municipality')->nullable();
+            $table->foreign('id_municipality')
+                    ->references('id')
+                    ->on('municipalities');
+           
         });
     }
 

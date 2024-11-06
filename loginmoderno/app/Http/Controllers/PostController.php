@@ -46,17 +46,22 @@ class PostController extends Controller
         return view('home'); 
     }
 
-    /**
-     * Display the specified resource.
+   /**
+     * buscar las investigaciones que tiene asociado el correo 
      */
-    public function show(Registro $registro)
+    public function buscarPorCorreo(Request $request)
     {
-        //
-    }
+      $registro=Registro::whereNameProgram($request->texto)->get();
+            return response()->json( 
+                [
+                    'lista'=> $registro
+    
+                ]
+                 );
+                
+        }
+    
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Registro $registro)
     {
         //
