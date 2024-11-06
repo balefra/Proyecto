@@ -75,7 +75,7 @@ Route::get('/vistaDescriptivo', function () {
 })->name('vistaDescriptivo');
 
 Route::get('/buscarProyecto', function () {
-    return view('formula.buscarProyecto');
+    return view('vistas.buscarProyecto');
 })->name('buscarProyecto');
 
 Route::get('/departamentos', [DepartamentController::class, 'index']);
