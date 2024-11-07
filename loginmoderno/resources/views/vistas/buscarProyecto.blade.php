@@ -11,7 +11,7 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="assets/estiloss.css">
+    <link rel="stylesheet" href="{{ asset('assets/estiloss.css') }}">
 </head>
 
 <body>
@@ -20,28 +20,23 @@
         <h1>Crear Proyecto</h1>
     </div>
     <div class="container">
-        <img src="assets/images/iberov2.png" class="iberov">
-        <img src="assets/images/uNIVERSIDA TRES CULTURAS.png" class="utc">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov">
+        <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc">
     </div>
-
-    <form>
-     
-        <p>Buscar proyecto</p>
-        
-        <input type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto"
-            required>
-         <br />
-        
-        <!-- Tabla donde mostrara el registro  -->
-         <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-          <div id="ejemploTexto"></div>
-         <em>
-            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-        </em>
+    <form action="/" method="POST" class="texto-left">
+        @csrf
+        <input type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
+        <br />
+        <div name="municipios" id="municipios"></div>
+            
 
 
 
-       
+
+        <center>
+            <a href="{{ url('/home') }}" class=bnt5>Atrás</a>
+            <a href="{{ url('/formacionproyecto') }}" class=bnt5>Siguiente</a>
+        </center>
 
     </form>
 
@@ -58,23 +53,23 @@
             fetch('/proyecto', {
                 method: 'POST',
                 body: JSON.stringify({
-                    texto: e.target.value
+                    texto: buscar.value
                 }),
                 headers: {
                     'Content-Type': 'application/json',
-                    'X-Requested-With':'XMLHttpRequest',
                     "X-CSRF-Token": csrftoken
                 }
             }).then(response => {
                 return response.json()
             }).then(data => {
-                var html = "<ul>";
+                var opciones = "";
                 for (let i in data.lista) {
-                    html += '<li>' + data.lista[i].titleDocument + '</li>';
+                    opciones += '<p>' + data.lista[i].titleDocument + '</p>';
                 }
-                 html += '<ul>';
-                 document.getElementById("ejemploTexto").innerHTML = html;
+                                 
+                document.getElementById("municipios").innerHTML = opciones;
             }).catch(error => console.error(error));
+
         })
     </script>
 </body>

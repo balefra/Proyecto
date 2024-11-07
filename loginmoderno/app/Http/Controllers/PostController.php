@@ -51,7 +51,7 @@ class PostController extends Controller
      */
     public function buscarPorCorreo(Request $request)
     {
-      $registro=Registro::whereNameProgram($request->texto)->get();
+      $registro=Registro::where('nameProgram',$request->texto)->get();
             return response()->json( 
                 [
                     'lista'=> $registro
