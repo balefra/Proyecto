@@ -48,6 +48,8 @@ Route::get('/informacionasociadas', function () {
     return view('vistas.informacionasociadas');
 })->name('informacionasociadas');
 
+
+
 Route::get('/infoenfoque', function () {
     return view('vistas.infoenfoque');
 })->name('infoenfoque');
@@ -94,9 +96,9 @@ Route::post('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar
 
 
 
-//---------------------------CRUD Municipios--------------------------------------
+//---------------------------CRUD Anidados--------------------------------------
 Route::post('/municipios', [MunicipalityController::class,'municipios']);
-
+Route::post('/departamentos', [DepartamentController::class,'departaments']);
 
 //------------------------CRUD REGISTRO----------------------------------
 Route::post('/', [PostController::class, 'store']);

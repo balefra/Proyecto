@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <title>Buscar Proyecto</title>
     <!-- Required meta tags -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -23,11 +24,12 @@
         <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov">
         <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc">
     </div>
-    <form action="/" method="POST" class="texto-left">
+    <form action="informacionasociadas" method="get" class="texto-left">
         @csrf
         <p>Codigo de proyecto</p>
-        <input type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
+        <input  type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
         <br />
+        <input  type="submit" name="btnenviar" value="aceptar">
         <div name="busquedadProyecto" id="busquedadProyecto"></div>
                <!-- Guardar datos -->
        
@@ -37,14 +39,14 @@
             <a href="{{ url('/formacionproyecto') }}" class=bnt5>Siguiente</a>
         </center>
 
-    </form>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4lo1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous">
     </script>
     <script>
         const csrftoken = document.head.querySelector('[name~=csrf-token][content]').content;
@@ -62,11 +64,9 @@
                 return response.json()
             }).then(data => {
                 var opciones = "";
-                var idProyecto = "";
-                for (let i in data.lista) {
+                    for (let i in data.lista) {
                     opciones += '<p>' + data.lista[i].titleDocument + '</p>';
-                    idProyecto = data.lista[i].id;
-                    idProyecto = <?php echo $idProyectoRes; ?>
+                                     
                 }
                                  
                 document.getElementById("busquedadProyecto").innerHTML = opciones;

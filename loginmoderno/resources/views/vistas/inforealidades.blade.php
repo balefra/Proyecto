@@ -27,8 +27,17 @@
             <li>
                 Fenómenos
                 <br>
-                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo1')">Ejemplo</button>
                 <button type="button" class="btn-def" onclick="toggleContent('definicion1')">Definición</button>
+                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo1')">Ejemplo</button>
+                <div id="definicion1" class="content" style="display:none;">
+                    <p class="texto-just2">
+                        <button type="button" onclick="toggleContent('definicion1')" class="btn-close"></button><br>
+                        <em>Situación de una realidad que se presenta de manera arbitraria a los parámetros esperados y
+                            que
+                            genera la inquietud o necesidad de interpretar/comprender.
+                        </em>
+                    </p>
+                </div>
                 <div id="ejemplo1" class="content" style="display:none;">
 
                     <p class="texto-just1">
@@ -47,21 +56,22 @@
                     </p>
 
                 </div>
-                <div id="definicion1" class="content" style="display:none;">
-                    <p class="texto-just2">
-                        <button type="button" onclick="toggleContent('definicion1')" class="btn-close"></button><br>
-                        <em>Situación de una realidad que se presenta de manera arbitraria a los parámetros esperados y
-                            que
-                            genera la inquietud o necesidad de interpretar/comprender.
-                        </em>
-                    </p>
-                </div>
+               
             </li>
             <li>
                 Problemáticas
                 <br>
-                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo2')">Ejemplo</button>
+                
                 <button type="button" class="btn-def" onclick="toggleContent('definicion2')">Definición</button>
+                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo2')">Ejemplo</button>
+                <div id="definicion2" class="content" style="display:none;">
+                    <p class="texto-just2">
+                        <button type="button" onclick="toggleContent('definicion2')" class="btn-close"></button><br>
+                        <em>Situación de una realidad que afecta el bienestar de un individuo o una organización y que
+                            genera la necesidad imperiosa de resolver /suplir.
+                        </em>
+                    </p>
+                </div>
                 <div id="ejemplo2" class="content" style="display:none;">
 
                     <p class="texto-just1">
@@ -88,20 +98,22 @@
                     </p>
 
                 </div>
-                <div id="definicion2" class="content" style="display:none;">
-                    <p class="texto-just2">
-                        <button type="button" onclick="toggleContent('definicion2')" class="btn-close"></button><br>
-                        <em>Situación de una realidad que afecta el bienestar de un individuo o una organización y que
-                            genera la necesidad imperiosa de resolver /suplir.
-                        </em>
-                    </p>
-                </div>
+               
             </li>
             <li>
                 Necesidades
                 <br>
-                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo3')">Ejemplo</button>
                 <button type="button" class="btn-def" onclick="toggleContent('definicion3')">Definición</button>
+
+                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo3')">Ejemplo</button>
+                <div id="definicion3" class="content" style="display:none;">
+                    <p class="texto-just2">
+                        <button type="button" onclick="toggleContent('definicion3')" class="btn-close"></button><br>
+                        <em>Situación de una realidad que se constituye en un imperativo a cumplir nolmalmente asociado
+                            con el cumplimiento de una determinada imposicion politica o legal.
+                        </em>
+                    </p>
+                </div>
                 <div id="ejemplo3" class="content" style="display:none;">
 
                     <p class="texto-just1">
@@ -111,20 +123,23 @@
 
 
                 </div>
-                <div id="definicion3" class="content" style="display:none;">
-                    <p class="texto-just2">
-                        <button type="button" onclick="toggleContent('definicion3')" class="btn-close"></button><br>
-                        <em>Situación de una realidad que se constituye en un imperativo a cumplir nolmalmente asociado
-                            con el cumplimiento de una determinada imposicion politica o legal.
-                        </em>
-                    </p>
-                </div>
+               
             </li>
             <li>
                 Experiencias o prácticas educativas (o escolares)
                 <br>
-                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo4')">Ejemplo</button>
                 <button type="button" class="btn-def" onclick="toggleContent('definicion4')">Definición</button>
+
+                <button type="button" class="btn-ej" onclick="toggleContent('ejemplo4')">Ejemplo</button>
+                <div id="definicion4" class="content" style="display:none;">
+                    <p class="texto-just2">
+                        <button type="button" onclick="toggleContent('definicion4')" class="btn-close"></button><br>
+                        <em>Acción consciente o deliberada, normalmente no documentada a través de la cual se ha
+                            interpretado un fenómeno o resuelto una problemática y que genera la necesidad de
+                            sistematizar / compilar.
+                        </em>
+                    </p>
+                </div>
                 <div id="ejemplo4" class="content" style="display:none;">
 
                     <p class="texto-just1">
@@ -151,15 +166,7 @@
 
 
                 </div>
-                <div id="definicion4" class="content" style="display:none;">
-                    <p class="texto-just2">
-                        <button type="button" onclick="toggleContent('definicion4')" class="btn-close"></button><br>
-                        <em>Acción consciente o deliberada, normalmente no documentada a través de la cual se ha
-                            interpretado un fenómeno o resuelto una problemática y que genera la necesidad de
-                            sistematizar / compilar.
-                        </em>
-                    </p>
-                </div>
+                
             </li>
         </ol>
 

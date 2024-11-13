@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departaments', function (Blueprint $table) {
+        Schema::create('countrys', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('id_country')
-            ->references('id')
-            ->on('countries')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
-            $table->timestamps();
         });
+    
     }
 
     /**
@@ -28,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departaments');
+        //
     }
 };

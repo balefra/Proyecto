@@ -26,64 +26,67 @@
     <form action="/" method="POST" class="texto-left">
         @csrf
         <p>Titulo del proyecto de investigación </p>
-        
+
         <input type="text" name="titleDocument" id="tittleDocument" placeholder="Escriba aqui el titulo del proyecto"
             required>
-            <br />
+        <br />
         <!--<input type="date" id="dateDocument" placeholder="Fecha documento" required>-->
         <p>Universidad </p>
-       
+
         <input type="text" name="school" id="universidad"
             placeholder="Escriba aqui la universidad a la que pertenece" required>
-            <br />
+        <br />
         <p>Nombre del programa </p>
-        
+
         <input type="text" name="nameProgram" id="nameProgram"
             placeholder="Escriba aqui el nombre del programa al que pertenece" required>
-            <br />
+        <br />
         <p>Integrantes del proyecto </p>
-       
+
         <input type="text" name="collaborators" id="collaborators"
             placeholder="Escriba aqui los integrantes del proyecto" required>
-            <br />
+        <br />
         <p>Identificacion colaboradores del proyecto </p>
-       
+
         <input type="text" name="idCollaborators" id="idCollaborators"
-            placeholder="Escriba aqui la dentificacion colaborales" required>
-            <br />
-                <p>Correo electronico</p>
-        
+            placeholder="Escriba aqui la identificacion  colaboradores" required>
+        <br />
+    <!--    <div id="colaborar1" class="content" style="display:none;">
+            <input type="text" name="idCollaborators" id="idCollaborators"
+            placeholder="Escriba aqui la identificacion  colaboradores" required>
+        </div>
+        <button type="button" class="btn-def" onclick="toggleContent('colaborar1')">AgregarColaborador</button>
+    -->
+        <p>Correo electronico</p>
+
         <input type="email" name="email" id="email" placeholder="Escriba aqui su correo electronico" required>
         <br />
 
-
-
-        <!-- <select id="categoriaInvestigacion" name="categoriaInvestigacion" required>
-            <option value="">Categoría de Investigación</option>
-            <option value="fundamental">Propkkkuesta de investigación</option>
-            <option value="aplicada">Investigación en Curso</option>
-            <option value="desarrollo">Investigación y Desarrollo</option>
-             </select>-->
         <?php
-        use App\Models\Departament;
-        use App\Models\Municipality;
+        use App\Models\Countries;
         
-        $departament = Departament::all();
+        $country = Countries::all();
         
         ?>
-        <p>Departamento </p>
-        
-        <select id="departamentos" name="departamentos" required>
-            <option value="">Seleccione un departamento</option>
-            @foreach ($departament as $row)
+        <p>Pais </p>
+
+        <select id="paises" name="paises" required>
+            <option value="">Seleccione un pais</option>
+            @foreach ($country as $row)
                 <option value={{ $row['id'] }}>{{ $row['name'] }}</option>
             @endforeach
         </select>
         <br />
 
-        <p>Municipio </p>
-        
 
+        <p>Departamento </p>
+
+        <select id="departamentos" name="departamentos" required>
+            <option value="">Seleccione un departamento</option>
+        </select>
+        <br />
+
+        <p>Municipio </p>
         <select name="municipios" id="municipios">
             <option value="">Seleccione un municipio</option>
         </select>
@@ -110,6 +113,31 @@
     </script>
     <script>
         const csrftoken = document.head.querySelector('[name~=csrf-token][content]').content;
+
+        document.getElementById('paises').addEventListener('change', (e) => {
+            fetch('/departamentos', {
+                method: 'POST',
+                body: JSON.stringify({
+                    texto: e.target.value
+                }),
+                headers: {
+                    'Content-Type': 'application/json',
+                    "X-CSRF-Token": csrftoken
+                }
+            }).then(response => {
+                return response.json()
+            }).then(data => {
+                var opciones = "";
+                for (let i in data.lista) {
+                    opciones += '<option value="' + data.lista[i].id + '">' + data.lista[i].name +
+                        '</option>';
+
+                }
+                document.getElementById("departamentos").innerHTML = opciones;
+            }).catch(error => console.error(error));
+
+        })
+    
         document.getElementById('departamentos').addEventListener('change', (e) => {
             fetch('/municipios', {
                 method: 'POST',
@@ -133,6 +161,13 @@
             }).catch(error => console.error(error));
 
         })
+
+
+
+        function toggleContent(id) {
+            const element = document.getElementById(id);
+            element.style.display = element.style.display === "none" ? "block" : "none";
+        }
     </script>
 </body>
 

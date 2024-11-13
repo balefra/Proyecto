@@ -113,7 +113,7 @@ h1 {
   font-size: 1.2em;
   color: #333;
   /* Estilos para el cuadro blanco */
-  background-color: rgb(246, 226, 49); /* Fondo blanco */
+  background-color: #e0f7e7; /* Fondo blanco */
   border: 1px solid #ccc; /* Borde gris claro */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
@@ -127,7 +127,7 @@ h1 {
   font-size: 1.2em;
   color: #333;
   /* Estilos para el cuadro blanco */
-  background-color: rgba(246, 99, 99, 0.722); /* Fondo blanco */
+  background-color: #d8e7f3; /* Fondo blanco */
   border: 1px solid #ccc; /* Borde gris claro */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
@@ -198,7 +198,7 @@ h1 {
     position: relative;
     left: 45%;
     margin-right: 10px;
-    background-color: rgb(246, 226, 49); /* Color de fondo verde */
+    background-color:#e0f7e7; /* Color de fondo verde */
     color: rgb(0, 0, 0); /* Color del texto */
     border: none; /* Sin borde */
     padding: 10px 20px; /* Espaciado interno */
@@ -231,7 +231,7 @@ h1 {
     position: relative;
     left: 45%;
     margin-right: 10px;
-    background-color: rgba(246, 99, 99, 0.722); /* Color de fondo verde */
+    background-color: #d8e7f3; /* Color de fondo verde */
     color: rgb(0, 0, 0); /* Color del texto */
     border: none; /* Sin borde */
     padding: 10px 20px; /* Espaciado interno */

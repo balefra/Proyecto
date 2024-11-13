@@ -4,17 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-
 class Departament extends Model
 {
-    use HasFactory;
     protected $fillable = [
         "id",
-        "name"
+        "name",
+        "id_country"
             ];
 
     public function municipality(){
         return $this->hasMany(Municipality::class,'id');
+    }
+
+
+    public function country(){
+        return $this->belongsTo(Countries::class,'id_country');
     }
 }

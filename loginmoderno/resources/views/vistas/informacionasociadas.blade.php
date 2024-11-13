@@ -1,4 +1,4 @@
-@extends($idProyectoRes)
+
 
 <!doctype html>
 <html lang="en">
@@ -22,9 +22,15 @@
 
 <body>
 
+<?php
+    if(isset($_GET['btnenviar'])){
+        $mensaje= $_GET['buscar'];
+    }
+
+    ?>
 
     <!-- Texto en el centro -->
-    <form class="texto-just" action="/workReality/{{$idProyectoRes}}" method='get'>
+    <form class="texto-just" action="/workReality/1" method='get'>
 
         <h1>Primer paso de la formulación</h1>
 

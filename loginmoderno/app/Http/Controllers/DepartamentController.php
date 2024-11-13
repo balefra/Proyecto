@@ -30,9 +30,15 @@ class DepartamentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function departaments(Request $request)
     {
-        //
+        $departaments = Departament::whereId_country( $request->texto )->get();
+        return response()->json( 
+            [
+                'lista'=> $departaments,
+
+            ]
+             );
     }
 
     /**

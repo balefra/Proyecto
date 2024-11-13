@@ -31,7 +31,7 @@
             <h1>Formulación del proyecto</h1>
             <p>La primera fase en el desarrollo de un proyecto es la formulación de este, para ello es importante tener en cuenta las siguientes apreciaciones:</p>
             <p><strong>Objeto de estudio e investigación en educación:</strong></p>
-            <p>El objeto de estudio e investigación en educación son la(s) realidad(es) que se presenta(n) en los contextos educativos, también denominados contextos escolares.</p>
+            <p>El objeto de estudio e investigación en educación son(es) la(s) realidad(es) que se presenta(n) en los contextos educativos, también denominados contextos escolares.</p>
             <p>Al respecto partimos por tanto del concepto de realidad como:</p>
             <blockquote>“aquello que acontece de manera verdadera o cierta, en oposición a lo que pertenece al terreno de la fantasía, la imaginación o la ilusión. Lo real, por lo tanto, es lo que existe efectivamente.”</blockquote>
        

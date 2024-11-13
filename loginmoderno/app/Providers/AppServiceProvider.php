@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-       View::share('idProyectoRes','idProyectoRes.'.config('buscarProyecto.idProyectoRes'));
+      // View::share('buscar', 'vista.buscarProyecto.buscar');
+    
     }
 }
