@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Crear Proyecto</title>
+    <title>Buscar Proyecto</title>
     <!-- Required meta tags -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8" />
@@ -17,7 +17,7 @@
 <body>
 
     <div class="cabecera">
-        <h1>Crear Proyecto</h1>
+        <h1>Buscar Proyecto</h1>
     </div>
     <div class="container">
         <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov">
@@ -25,6 +25,7 @@
     </div>
     <form action="/" method="POST" class="texto-left">
         @csrf
+        <p>Codigo de proyecto</p>
         <input type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
         <br />
         <div name="municipios" id="municipios"></div>
