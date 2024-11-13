@@ -1,3 +1,5 @@
+@extends($idProyectoRes)
+
 <!doctype html>
 <html lang="en">
 
@@ -20,8 +22,9 @@
 
 <body>
 
+
     <!-- Texto en el centro -->
-    <form class="texto-just" action="/workReality/1" method='get'>
+    <form class="texto-just" action="/workReality/{{$idProyectoRes}}" method='get'>
 
         <h1>Primer paso de la formulación</h1>
 

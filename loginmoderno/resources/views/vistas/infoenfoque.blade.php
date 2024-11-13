@@ -19,6 +19,11 @@
 </div>
 
 <body>
+    <?php
+    $buscar = $_GET['buscar'];
+    echo $buscar;
+    
+    ?>
 
     <!-- Texto en el centro -->
     <form class="texto-just" action="/workEnfoque/1" method='get'>

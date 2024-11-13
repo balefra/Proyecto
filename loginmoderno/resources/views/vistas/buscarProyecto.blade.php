@@ -28,11 +28,9 @@
         <p>Codigo de proyecto</p>
         <input type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
         <br />
-        <div name="municipios" id="municipios"></div>
-            
-
-
-
+        <div name="busquedadProyecto" id="busquedadProyecto"></div>
+               <!-- Guardar datos -->
+       
 
         <center>
             <a href="{{ url('/home') }}" class=bnt5>Atrás</a>
@@ -64,11 +62,14 @@
                 return response.json()
             }).then(data => {
                 var opciones = "";
+                var idProyecto = "";
                 for (let i in data.lista) {
                     opciones += '<p>' + data.lista[i].titleDocument + '</p>';
+                    idProyecto = data.lista[i].id;
+                    idProyecto = <?php echo $idProyectoRes; ?>
                 }
                                  
-                document.getElementById("municipios").innerHTML = opciones;
+                document.getElementById("busquedadProyecto").innerHTML = opciones;
             }).catch(error => console.error(error));
 
         })
