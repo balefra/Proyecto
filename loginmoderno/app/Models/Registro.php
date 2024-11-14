@@ -31,4 +31,10 @@ class Registro extends Model
             return $this->hasOne(Work::class, 'registro_id','id');
         }
 
+        public function integrant(){
+            return $this->hasMany(Integrant::class, 'id_registro','id');
+        }
+
+
+
 }

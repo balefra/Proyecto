@@ -43,6 +43,7 @@ class PostController extends Controller
                     ]);
 
            $registro->work()->create(        );
+           $registro->integrant()->create();
         return view('home'); 
     }
 

@@ -310,3 +310,17 @@ a{
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
 }
+
+
+.puntero{
+    cursor: pointer;
+    color: hwb(260 98% 0%);
+    background-color: #d32f2f; 
+    border: 1px solid #fcfcfc; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    width: 90%;
+  }
+  .ocultar{
+    display: none;
+  }
+  
