@@ -14,8 +14,6 @@ class Registro extends Model
         "titleDocument",
         "school",
         "nameProgram",
-        'collaborators',
-        'idCollaborators',
         'email',
         'id_departament',
         'id_municipality',

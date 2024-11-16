@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Registro;
-
+use Illuminate\Support\Arr;
 use App\Models\Work;
 use Illuminate\Http\Request;
 
@@ -35,15 +35,24 @@ class PostController extends Controller
             'titleDocument'=> $request->titleDocument,
             'school'=> $request->school,
             'nameProgram'=> $request->nameProgram,
-            'collaborators'=> $request->collaborators,
-            'idCollaborators'=> $request->idCollaborators,
             'email'=> $request->email,
             'id_departament' => $request->departamentos,
             'id_municipality' => $request->municipios,
                     ]);
 
            $registro->work()->create(        );
-           $registro->integrant()->create();
+
+           $array_num = count($request->get('collaborators'));
+           for ($i = 0; $i < $array_num; ++$i){
+            $registro->integrant()->create([
+                'nombre' => $request->collaborators[$i],
+                'identificacion' =>$request->idCollaborators[$i],
+               
+                ]);
+        }
+        
+
+         
         return view('home'); 
     }
 

@@ -16,8 +16,6 @@ return new class extends Migration
             $table->string('titleDocument');
             $table->string('school');
             $table->string('nameProgram');
-            $table->string('collaborators');
-            $table->string('idCollaborators');
             $table->string('email');
             $table->unsignedBigInteger('id_departament')->nullable();
             $table->foreign('id_departament')
@@ -27,6 +25,7 @@ return new class extends Migration
             $table->foreign('id_municipality')
                     ->references('id')
                     ->on('municipalities');
+            $table->timestamps();
            
         });
     }

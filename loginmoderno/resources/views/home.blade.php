@@ -35,7 +35,7 @@
                     <img src="{{ asset('assets/images/iconsformulacion.png') }}" alt="Icono Check">
                     <span>Registro propuesta del proyecto</span>
                 </a>  
-                <a href="{{ url('/formacionproyecto') }}" class="btn btn-orange">
+                <a href="{{ url('/buscarProyecto') }}" class="btn btn-orange">
                     <img src="{{ asset('assets/images/iconsformulacion.png') }}" alt="Icono Check">
                     <span>Formulación Proyecto</span>
                 </a>                
