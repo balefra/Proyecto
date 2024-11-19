@@ -35,8 +35,8 @@
        
 
         <center>
-            <a href="{{ url('/home') }}" class=bnt5>Atrás</a>
-            <a href="{{ url('/formacionproyecto') }}" class=bnt5>Siguiente</a>
+            <a href="{{ url('/home') }}" class=btn5>Atrás</a>
+            <a href="{{ url('/formacionproyecto') }}" class=btn5>Siguiente</a>
         </center>
 
     </div>

@@ -19,11 +19,14 @@ class Registro extends Model
         'id_municipality',
         'id_user'];
 
-        public function registro()  {
+        public function registroDep()  {
             $this->belongsTo(Departament::class,'id_departament');
-            $this->belongsTo(Municipality::class,'id_municipality');
+       
         }
 
+        public function registroMun()  {
+        $this->belongsTo(Municipality::class,'id_municipality');
+    }
         //relacion uno a uno
         public function work(){
             return $this->hasOne(Work::class, 'registro_id','id');

@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 
@@ -22,13 +20,7 @@
 
 <body>
 
-<?php
-    if(isset($_GET['btnenviar'])){
-        $mensaje= $_GET['buscar'];
-    }
-
-    ?>
-
+    
     <!-- Texto en el centro -->
     <form class="texto-just" action="/workReality/1" method='get'>
 
@@ -73,9 +65,15 @@
             <a href="{{ url('/infoenfoque') }}" class="btn5">Siguiente</a>
         </center>
 
+        
     </form>
 
+    <div class="savePdf">
+        <input class="btnEnviar" type="submit" name="register" value="DescargarPDF">
 
+      <!--  <img src="{{ 'assets/images/descargar-pdf.png' }}"/>-->
+    </div>
+    
 
 </body>
 

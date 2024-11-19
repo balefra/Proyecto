@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
 }
 
-/* Logo en las esquinas */
+/* Logo en las esquinas y imagenes */
 .logo-izquierda {
     position: absolute;
     top: 20px;
@@ -32,6 +32,16 @@ body {
     right: 20px;
     width: 150px;
     height: auto;
+}
+
+/*imagen descargar-pdf*/
+.img-pdf {
+  position: sticky;
+  top: 50%; /* Centra verticalmente */
+  right: 120px; /* Ubica a la derecha */
+  transform: translateY(-50%); /* Ajusta la posición para que quede centrado completamente */
+  width: 80px; /* Ancho de la imagen */
+  height: auto; /* Mantiene las proporciones */
 }
 
 /* Título en el centro superior */
@@ -315,4 +325,11 @@ input{
   background-color: #d32f2f; /* Rojo oscuro al pasar el cursor */
 }
 
-
+.savePdf {
+  text-align: center;
+  padding: 3px;
+  background-color: DarkSalmon;
+  color: white;
+  width: 80%;
+  padding: 5%;
+}

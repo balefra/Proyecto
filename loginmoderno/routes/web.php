@@ -8,20 +8,18 @@ use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\WorkaController;
 //use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use App\Http\Controllers\PDFController;
-
-
-
-
+use App\Mail\EnvioCorreo;
+use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
-   return view('welcome'); 
+    return view('welcome');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/crear', function (){
+Route::get('/crear', function () {
     return view('posts.Crear');
 })->name('Crear');
 
@@ -83,31 +81,37 @@ Route::get('/buscarProyecto', function () {
 Route::get('/departamentos', [DepartamentController::class, 'index']);
 
 //pdf
-Route::post('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar.pdf');
+Route::get('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar.pdf');
 
+//traer datos al pdf
+Route::get('/infopdf/{registro}', [PDFController::class, 'generaridPDF']);
 
+/*
+//email
+Route::get('/correo', function () {
+    Mail::to('maria.c39robledo@gmail.com')
+        ->send(new EnvioCorreo());
+    return "mensaje enviado";
+})->name('correo');
+*/
+Route::get('/correo', function () {
+    Mail::to('maria.c39robledo@gmail.com')
+        ->send(new EnvioCorreo);
+    return "mensaje aa enviado";
+})->name('correo');
 
-/*Route::get('/pdf', function () { //habilitado
-    // Asegúrate de tener la vista 'pdf.pdf' creada
-   $pdf = PDF::loadView('pdf.pdf');//habilitado
-       
-    return $pdf->stream();   //habilitado
-})->name('pdf.generate');//habilitado */
 
 
 
 //---------------------------CRUD Anidados--------------------------------------
-Route::post('/municipios', [MunicipalityController::class,'municipios']);
-Route::post('/departamentos', [DepartamentController::class,'departaments']);
+Route::post('/municipios', [MunicipalityController::class, 'municipios']);
+Route::post('/departamentos', [DepartamentController::class, 'departaments']);
 
 //------------------------CRUD REGISTRO----------------------------------
 Route::post('/', [PostController::class, 'store']);
 
-Route::get('/workReality/{registro}',[PostController::class,'update']);
-Route::get('/workEnfoque/{registro}',[PostController::class,'updateEnfoque']);
-Route::get('/workInvesti/{registro}',[PostController::class,'updateInvesti']);
+Route::get('/workReality/{registro}', [PostController::class, 'update']);
+Route::get('/workEnfoque/{registro}', [PostController::class, 'updateEnfoque']);
+Route::get('/workInvesti/{registro}', [PostController::class, 'updateInvesti']);
 
-Route::post('/proyecto',[PostController::class,'buscarPorCorreo']);
-
-
-?>
+Route::post('/proyecto', [PostController::class, 'buscarPorCorreo']);

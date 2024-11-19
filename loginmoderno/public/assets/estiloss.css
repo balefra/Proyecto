@@ -151,6 +151,44 @@ a{
 
 
 
+/* diseñor de botones de atras y siguiente*/
+
+.btn5 {
+  padding: 15px 100px;
+  margin: 10px 4px;
+  color: #3206f7;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+  z-index: 1; /* Se asegura de que el texto esté encima del pseudo-elemento */
+}
+
+.btn5::before {
+  content: '';
+  position: absolute;
+  top: 0; /* Alinea con la parte superior */
+  left: 0; /* Alinea con la izquierda */
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: inset 0px 0px 0px #6098FF;
+  transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+  z-index: -1; /* Hace que el pseudo-elemento esté detrás del contenido del botón */
+}
+
+.btn5:hover::before {
+  box-shadow: inset 300px 0 0 #6098FF; /* Muestra el efecto al pasar el cursor */
+}
+
+
+  
+
 
 .btn {
   border: none;
@@ -197,41 +235,6 @@ a{
 }
 
 
-/* diseñor de botones de atras y siguiente*/
-
-.btn5{
-    padding: 15px 100px;
-    margin:10px 4px;
-    color: #3206f7;
-    font-family: sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    position: relative;
-    text-decoration: none;
-    display:inline-block;
-    
-  }
-  .btn5{
-    border:none;
-  }
-  .btn5::before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    bottom:0px;
-    z-index:-1;
-    width: 100%;
-    height:100%;
-    background: transparent;
-    box-shadow: inset 0px 0px 0px #6098FF;
-    display: block;
-    -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
-    transition: all 0.4s cubic-bezier(.5, .24, 0, 1)
-  }
-  /* if you want it to show from the right use -300px instead */
-  .btn5:hover::before {
-   box-shadow: inset 300px 0px 0px #6098FF;
-  }
 
  /*pestaña de definición*/
  /* Estilos para la ventana emergente tipo anuncio */

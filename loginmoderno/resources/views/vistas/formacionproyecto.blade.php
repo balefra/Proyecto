@@ -42,6 +42,11 @@
         </center>
     
         </div>
+    <<img
+        src="{{('assets/images/descargar-pdf.png')}}"
+        class="img-pdf"
+        alt="descargar pdf"
+    />
     
                
             
