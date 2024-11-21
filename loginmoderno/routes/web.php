@@ -78,6 +78,10 @@ Route::get('/buscarProyecto', function () {
     return view('vistas.buscarProyecto');
 })->name('buscarProyecto');
 
+Route::get('/objetivoInvestigacion', function () {
+    return view('vistas.objetivoInvestigacion');
+})->name('objetivoInvestigacion');
+
 Route::get('/departamentos', [DepartamentController::class, 'index']);
 
 //pdf
@@ -113,5 +117,6 @@ Route::post('/', [PostController::class, 'store']);
 Route::get('/workReality/{registro}', [PostController::class, 'update']);
 Route::get('/workEnfoque/{registro}', [PostController::class, 'updateEnfoque']);
 Route::get('/workInvesti/{registro}', [PostController::class, 'updateInvesti']);
+Route::get('/workTecnicas/{registro}', [PostController::class, 'updateTecnicas']);
 
 Route::post('/proyecto', [PostController::class, 'buscarPorCorreo']);

@@ -56,12 +56,12 @@
                     </p>
 
                 </div>
-               
+
             </li>
             <li>
                 Problemáticas
                 <br>
-                
+
                 <button type="button" class="btn-def" onclick="toggleContent('definicion2')">Definición</button>
                 <button type="button" class="btn-ej" onclick="toggleContent('ejemplo2')">Ejemplo</button>
                 <div id="definicion2" class="content" style="display:none;">
@@ -98,7 +98,7 @@
                     </p>
 
                 </div>
-               
+
             </li>
             <li>
                 Necesidades
@@ -118,12 +118,21 @@
 
                     <p class="texto-just1">
                         <button type="button" onclick="toggleContent('ejemplo3')" class="btn-close"></button><br>
-                        <em>Pendiente.</em>
+                        <em>En 2023, fue expedida la ley XX de 2023, mediante la cual se implementa la educación para la
+                            paz y el postconflicto, de acuerdo con esta norma, todas las instituciones educativas en el
+                            país deben llevar a cabo de manera consensuada con la comunidad académica, ajustes en el
+                            Proyecto Educativo Institucional PEI y los documentos curriculares orientadores antes de
+                            2025, de manera tal que involucren contenidos y estrategias de formación orientadas a; la
+                            reflexión de todos los factores generadores de la violencia desde una visión historio
+                            critica, el reconocimiento de las políticas y legislación generada a partir de la firma del
+                            acuerdo de Paz, las estrategias de resolución pacifica de conflictos enmarcada en el estado
+                            social de derecho, las estrategias nacionales y locales asociadas con verdad, reparación y
+                            no repetición. </em>
                     </p>
 
 
                 </div>
-               
+
             </li>
             <li>
                 Experiencias o prácticas educativas (o escolares)
@@ -166,7 +175,7 @@
 
 
                 </div>
-                
+
             </li>
         </ol>
 
@@ -176,11 +185,7 @@
         </center>
     </div>
 
-    <<img
-    src="{{('assets/images/descargar-pdf.png')}}"
-    class="img-pdf"
-    alt="descargar pdf"
-/>
+    <<img src="{{ 'assets/images/descargar-pdf.png' }}" class="img-pdf" alt="descargar pdf" />
 
     <script>
         function toggleContent(id) {

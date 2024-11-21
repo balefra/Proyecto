@@ -17,6 +17,9 @@ return new class extends Migration
             $table->string('descrip_reality')->nullable();
             $table->string('name_enfoque')->nullable();
             $table->string('type_investigation')->nullable();
+            $table->string('tipo_Estudio')->nullable();
+            $table->string('resultado_Esperado')->nullable();
+            $table->string('tecnicas_Recoleccion')->nullable();
             $table->unsignedBigInteger('registro_id')->unique();
             $table->foreign('registro_id')
                     ->references('id')

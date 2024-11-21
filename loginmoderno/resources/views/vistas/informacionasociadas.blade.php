@@ -67,13 +67,13 @@
 
         
     </form>
-
+<!--
     <div class="savePdf">
         <input class="btnEnviar" type="submit" name="register" value="DescargarPDF">
 
-      <!--  <img src="{{ 'assets/images/descargar-pdf.png' }}"/>-->
+       <img src="{{ 'assets/images/descargar-pdf.png' }}"/>
     </div>
-    
+-->
 
 </body>
 

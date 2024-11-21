@@ -34,7 +34,7 @@
             <p>El objeto de estudio e investigación en educación son(es) la(s) realidad(es) que se presenta(n) en los contextos educativos, también denominados contextos escolares.</p>
             <p>Al respecto partimos por tanto del concepto de realidad como:</p>
             <blockquote>“aquello que acontece de manera verdadera o cierta, en oposición a lo que pertenece al terreno de la fantasía, la imaginación o la ilusión. Lo real, por lo tanto, es lo que existe efectivamente.”</blockquote>
-       
+       <p><small>Porto, J. P., & Gardey, A. (2013, junio 17). Realidad. Definición.de; Definicion.de.<a href="https://definicion.de/realidad/" target="_blank">https://definicion.de/realidad/</a></small></p>
         <!-- Botones en la parte inferior -->
         <center>
             <a href="{{ url('/home') }}" class="btn5">Atrás</a>

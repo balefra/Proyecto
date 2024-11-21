@@ -27,11 +27,18 @@
     <form action="informacionasociadas" method="get" class="texto-left">
         @csrf
         <p>Codigo de proyecto</p>
-        <input  type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
+        <input type="search" name="buscar" id="buscar" placeholder="Escriba aqui el codigo de su proyecto" required>
         <br />
-        <input  type="submit" name="btnenviar" value="aceptar">
         <div name="busquedadProyecto" id="busquedadProyecto"></div>
-               <!-- Guardar datos -->
+        
+        <!-- Contenedor oculto de la imagen con el enlace -->
+        <div id="resultContainer" style="display: none;">
+            <a href="{{ url('/infopdf/1/') }}">
+                <img src="{{ asset('assets/images/descargar-pdf.png') }}" class="info-icon" />
+            </a>
+        </div>
+         
+        <!-- Guardar datos -->
        
 
         <center>
@@ -73,7 +80,17 @@
             }).catch(error => console.error(error));
 
         })
+
+        document.getElementById('buscar').addEventListener('input', function() {
+        const searchValue = this.value.trim();
+        if (searchValue !== "") {
+            document.getElementById('resultContainer').style.display = 'block';
+        } else {
+            document.getElementById('resultContainer').style.display = 'none';
+        }
+    });
     </script>
+
 </body>
 
 </html>

@@ -15,7 +15,10 @@ class Work extends Model
         "descrip_reality",
         "name_enfoque",
         'type_investigation',
-        'registro_id',];
+        'registro_id',
+        'tipo_Estudio',
+        'resultado_Esperado',
+        'tecnicas_Recoleccion'];
         
     //relacion uno a uno 
     public function registro(){

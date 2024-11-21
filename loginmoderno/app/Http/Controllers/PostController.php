@@ -56,7 +56,7 @@ class PostController extends Controller
      */
     public function buscarPorCorreo(Request $request)
     {
-        $registro = Registro::where('nameProgram', $request->texto)->get();
+        $registro = Registro::where('email', $request->texto)->get();
         return response()->json(
             [
                 'lista' => $registro
@@ -117,13 +117,31 @@ class PostController extends Controller
         return view('vistas.infoinvestigacion');
     }
 
+    public function updateTecnicas(Request $request, Registro $registro)
+    {
+        $registro->work()->update([
+            "tipo_Estudio" => $request->enfoque,
+            "resultado_Esperado" => $request->resultado,
+            "tecnicas_Recoleccion" => $request->tecnicas
+        ]);
+    }
+
 
     public function updateInvesti(Request $request, Registro $registro)
     {
         $registro->work()->update([
             "type_investigation" => $request->investigacion
         ]);
-        return view('vistas.infoinvestigacion');
+          // Redirigir según el valor seleccionado
+          if ($request->investigacion === "analitico") {
+         // asi veo qeu pasan las variables de vbista a vista
+           // echo($request->investigacion);
+            return view('analitico.vistaAnalitico'); 
+        } else if ($request->investigacion === "descriptivo") {
+            return view('descritivo.vistaDescriptivo');
+        } else if ($request->investigacion === "intervencion") {
+            return view('intervencion.vistaIntervencion'); 
+        } 
     }
 
     /**

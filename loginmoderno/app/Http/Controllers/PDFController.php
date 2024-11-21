@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Departament;
 use App\Models\Registro;
 use Illuminate\Http\Request;
 use PDF;
@@ -29,9 +30,9 @@ class PDFController extends Controller
     {
 
 
-        $proyecto = Registro::where('id', $registro)
-            ->with('work')
-            ->get();
+        $proyecto = Registro::with('departamento','municipio')->get();
+
+    
         $pdf = PDF::loadView('pdf.pdf', ['proyecto' => $proyecto]);
         return $pdf->stream('reporte.pdf');
     }

@@ -21,13 +21,13 @@
 <body>
 
     <!-- Texto en el centro -->
-    <form class="texto-just">
+    <form class="texto-just" action="/workTecnicas/1" method='get'>
 
         <h1>Tipo de Estudio </h1>
 
         <br />
         <br />
-        <p> descripción
+        <p> 
         </p>
         <br />
 
@@ -35,9 +35,9 @@
 
         <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
             <option value="">Seleccione un tipo de estudio</option>
-            <option value="observacionales">Observacionales:</option>
-            <option value="exploratorio">Exploratorio:</option>
-            <option value="experimentales">Experimentales:</option>
+            <option value="observacionales">Observacionales</option>
+            <option value="exploratorio">Exploratorio</option>
+            <option value="experimentales">Experimentales</option>
 
         </select>
         <br />
@@ -52,7 +52,7 @@
 
         <br />
         <br />
-        <p> descripción
+        <p> 
         </p>
         <br />
 
@@ -60,9 +60,9 @@
 
         <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
             <option value="">Seleccione el resultado esperado</option>
-            <option value="observacionales">Observacionales:</option>
-            <option value="exploratorio">Exploratorio:</option>
-            <option value="experimentales">Experimentales:</option>
+            <option value="observacionales">Observacionales</option>
+            <option value="exploratorio">Exploratorio</option>
+            <option value="experimentales">Experimentales</option>
             
         </select>
         <br />
@@ -77,7 +77,7 @@
 
         <br />
         <br />
-        <p> descripción
+        <p>
         </p>
         <br />
 
@@ -85,9 +85,9 @@
 
         <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
             <option value="">Seleccione recolección y análisis</option>
-            <option value="observacionales">Observacionales:</option>
-            <option value="exploratorio">Exploratorio:</option>
-            <option value="experimentales">Experimentales:</option>
+            <option value="observacionales">Observacionales</option>
+            <option value="exploratorio">Exploratorio</option>
+            <option value="experimentales">Experimentales</option>
             
         </select>
         <br />
@@ -105,7 +105,7 @@
         <!-- Botones en la parte inferior -->
         <center>
             <a href="{{ url('/infoinvestigacion') }}" class="btn5">Atrás</a>
-            <a href="{{ url('#') }}" class="btn5">Siguiente</a>
+            <a href="{{ url('/objetivoInvestigacion') }}" class="btn5">Siguiente</a>
         </center>
 
     </form>

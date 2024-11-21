@@ -37,7 +37,7 @@
             <option value="">Seleccione un investigación</option>
             <option value="analitico">Analíticos</option>
             <option value="descriptivo">Descriptivos</option>
-            <option value="intervencion">De intervención </option>
+            <option value="intervencion">De intervención</option>
         </select>
         <br />
         <br />
@@ -103,7 +103,7 @@
         } else if (investigacion === "intervencion") {
             window.location.href = "{{ url('/vistaIntervencion') }}";
         } else {
-            alert("Por favor, selecciona un tipo de investigación.");
+            alert("Por favor, selecciona un tipo de investigación.");// -toca colocar las alert en todas las  pantllas
         }
     }
 </script>

@@ -19,13 +19,13 @@ class Registro extends Model
         'id_municipality',
         'id_user'];
 
-        public function registroDep()  {
-            $this->belongsTo(Departament::class,'id_departament');
+        public function departamento()  {
+           return  $this->belongsTo(Departament::class,'id_departament');
        
         }
 
-        public function registroMun()  {
-        $this->belongsTo(Municipality::class,'id_municipality');
+        public function municipio()  {
+            return $this->belongsTo(Municipality::class,'id_municipality');
     }
         //relacion uno a uno
         public function work(){

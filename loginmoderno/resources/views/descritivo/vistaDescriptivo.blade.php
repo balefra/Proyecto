@@ -21,13 +21,13 @@
 <body>
 
     <!-- Texto en el centro -->
-    <form class="texto-just">
+    <form class="texto-just" action="/workTecnicas/1" method='get'>
 
         <h1>Tipo de Estudio </h1>
 
         <br />
         <br />
-        <p> descripción
+        <p>
         </p>
         <br />
 
@@ -36,7 +36,7 @@
         <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
             <option value="">Seleccione un tipo de estudio</option>
             <option value="historico">Histórico o retrospectivo</option>
-            <option value="descriptivo">Descriptivo (propiamente dicho) o prospectivo:</option>
+            <option value="descriptivo">Descriptivo (propiamente dicho) o prospectivo</option>
         </select>
         <br />
         <br />
@@ -50,7 +50,7 @@
 
         <br />
         <br />
-        <p> descripción
+        <p>
         </p>
         <br />
 
@@ -58,7 +58,7 @@
 
         <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
             <option value="">Seleccione un tipo de estudio</option>
-            <option value="estudio"> Estudio de impacto: </option>
+            <option value="estudio"> Estudio de impacto</option>
             <option value="biografias">Biografía</option>
             <option value="Compilacion">Compilación de experiencia(s)</option>
             <option value="narrativas">Narrativas</option>
@@ -76,7 +76,7 @@
 
         <br />
         <br />
-        <p> descripción
+        <p> 
         </p>
         <br />
 
@@ -84,7 +84,7 @@
 
         <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
             <option value="">Seleccione un tipo de estudio</option>
-            <option value="estudio"> Estudio de impacto: </option>
+            <option value="estudio"> Estudio de impacto</option>
             <option value="biografias">Biografía</option>
             <option value="Compilacion">Compilación de experiencia(s)</option>
             <option value="narrativas">Narrativas</option>
@@ -104,7 +104,7 @@
         <!-- Botones en la parte inferior -->
         <center>
             <a href="{{ url('/infoinvestigacion') }}" class="btn5">Atrás</a>
-            <a href="{{ url('#') }}" class="btn5">Siguiente</a>
+            <a href="{{ url('/objetivoInvestigacion') }}" class="btn5">Siguiente</a>
         </center>
 
     </form>
