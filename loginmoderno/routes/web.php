@@ -34,26 +34,26 @@ Route::get('/tipoestudio', function () {
     return view('vistas.tipoestudio');
 })->name('tipoestudio');
 
-Route::get('/formacionproyecto', function () {
-    return view('vistas.formacionproyecto');
+Route::get('/formacionproyecto/{id}', function ($id) {
+    return view('vistas.formacionproyecto',compact('id'));
 })->name('formacionproyecto');
 
-Route::get('/inforealidades', function () {
-    return view('vistas.inforealidades');
+Route::get('/inforealidades/{id}', function ($id) {
+    return view('vistas.inforealidades',compact('id'));
 })->name('inforealidades');
 
-Route::get('/informacionasociadas', function () {
-    return view('vistas.informacionasociadas');
+Route::get('/informacionasociadas/{id}', function ($id) {
+    return view('vistas.informacionasociadas',compact('id'));
 })->name('informacionasociadas');
 
 
 
-Route::get('/infoenfoque', function () {
-    return view('vistas.infoenfoque');
+Route::get('/infoenfoque/{id}', function ($id) {
+    return view('vistas.infoenfoque',compact('id'));
 })->name('infoenfoque');
 
-Route::get('/infoinvestigacion', function () {
-    return view('vistas.infoinvestigacion');
+Route::get('/infoinvestigacion/{id}', function ($id) {
+    return view('vistas.infoinvestigacion',compact('id'));
 })->name('infoinvestigacion');
 
 Route::get('/enfoque', function () {
@@ -62,24 +62,24 @@ Route::get('/enfoque', function () {
 
 // vista dependiendo de tipo de investigación
 
-Route::get('/vistaAnalitico', function () {
-    return view('analitico.vistaAnalitico');
+Route::get('/vistaAnalitico/{id}', function ($id) {
+    return view('analitico.vistaAnalitico',compact('id'));
 })->name('vistaAnalitico');
 
-Route::get('/vistaIntervencion', function () {
-    return view('intervencion.vistaIntervencion');
+Route::get('/vistaIntervencion/{id}', function ($id) {
+    return view('intervencion.vistaIntervencion',compact('id'));
 })->name('vistaIntervencion');
 
-Route::get('/vistaDescriptivo', function () {
-    return view('descritivo.vistaDescriptivo');
+Route::get('/vistaDescriptivo/{id}', function ($id) {
+    return view('descritivo.vistaDescriptivo',compact('id'));
 })->name('vistaDescriptivo');
 
 Route::get('/buscarProyecto', function () {
     return view('vistas.buscarProyecto');
 })->name('buscarProyecto');
 
-Route::get('/objetivoInvestigacion', function () {
-    return view('vistas.objetivoInvestigacion');
+Route::get('/objetivoInvestigacion/{id}', function ($id) {
+    return view('vistas.objetivoInvestigacion',compact('id'));
 })->name('objetivoInvestigacion');
 
 Route::get('/departamentos', [DepartamentController::class, 'index']);

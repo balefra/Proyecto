@@ -61,8 +61,8 @@
 
         <!-- Botones en la parte inferior -->
         <center>
-            <a href="{{ url('/inforealidades') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/infoenfoque') }}" class="btn5">Siguiente</a>
+            <a href="{{ route('inforealidades', ['id' => $id]) }}" class="btn5">Atrás</a>
+            <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Siguiente</a>
         </center>
 
         

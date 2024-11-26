@@ -38,7 +38,7 @@
         <!-- Botones en la parte inferior -->
         <center>
             <a href="{{ url('/home') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/inforealidades') }}" class="btn5">Siguiente</a>
+            <a href="{{ route('inforealidades', ['id' => $id]) }}" class="btn5">Siguiente</a>
         </center>
     
         </div>

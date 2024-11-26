@@ -103,9 +103,10 @@
 
         <!-- Botones en la parte inferior -->
         <center>
-            <a href="{{ url('/infoinvestigacion') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/objetivoInvestigacion') }}" class="btn5">Siguiente</a>
+            <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
+            <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
         </center>
+       
 
     </form>
 

@@ -39,7 +39,7 @@
                 <tr>
                     <td>{{ $reg->id }} </td>
                     <td> {{ $reg->titleDocument }}</td>
-                    <td><a  href="{{ url("/formacionproyecto/{$reg->id}")}}>editar</a></td>
+                    <td><a  href="{{ url("/formacionproyecto/{$reg->id}")}}">editar</a></td>
                     <td><a href="{{ url("/infopdf/{$reg->id}")}}" target="_blank">pdf</a></td>
                 </tr>
                 <tr>

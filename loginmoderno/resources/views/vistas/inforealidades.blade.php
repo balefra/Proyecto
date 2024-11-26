@@ -180,8 +180,8 @@
         </ol>
 
         <center>
-            <a href="{{ url('/formacionproyecto') }}" class="btn5">Atrás</a>
-            <a href="{{ url('/informacionasociadas') }}" class="btn5">Siguiente</a>
+            <a href="{{ route('formacionproyecto', ['id' => $id]) }}" class="btn5">Atrás</a>
+            <a href="{{ route('informacionasociadas', ['id' => $id]) }}" class="btn5">Siguiente</a>
         </center>
     </div>
 

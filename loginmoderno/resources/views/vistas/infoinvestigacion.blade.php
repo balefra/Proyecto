@@ -54,8 +54,8 @@
 
         <!-- Botones en la parte inferior -->
         <center>
-            <a href="{{ url('/infoenfoque') }}" class="btn5">Atrás</a>
-            <a onclick="redirigir()" class="btn5">Siguiente</a>
+            <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Atrás</a>
+            <a onclick="redirigir({{ $id }})" class="btn5">Siguiente</a>
         </center>
 
     </form>
@@ -92,16 +92,16 @@
         // Hacer visible el texto del ejemplo
         ejemploTexto.style.display = "block";
     }
-    function redirigir() {
+    function redirigir($id) {
         const investigacion = document.getElementById("investigacion").value;
 
         // Redirigir según el valor seleccionado
         if (investigacion === "analitico") {
-            window.location.href = "{{ url('/vistaAnalitico') }}";
+            window.location.href = "{{ route('vistaAnalitico', ['id' => "$id"]) }}";
         } else if (investigacion === "descriptivo") {
-            window.location.href = "{{ url('/vistaDescriptivo') }}";
+            window.location.href = "{{ route('vistaDescriptivo', ['id' => "$id"]) }}";
         } else if (investigacion === "intervencion") {
-            window.location.href = "{{ url('/vistaIntervencion') }}";
+            window.location.href = "{{ route('vistaIntervencion', ['id' => "$id"]) }}";
         } else {
             alert("Por favor, selecciona un tipo de investigación.");// -toca colocar las alert en todas las  pantllas
         }
