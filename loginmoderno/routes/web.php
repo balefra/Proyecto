@@ -82,6 +82,12 @@ Route::get('/objetivoInvestigacion/{id}', function ($id) {
     return view('vistas.objetivoInvestigacion',compact('id'));
 })->name('objetivoInvestigacion');
 
+
+Route::get('/flex', function () {
+    return view('vistas.pruebaflex');
+})->name('pruebaflex');
+
+
 Route::get('/departamentos', [DepartamentController::class, 'index']);
 
 //pdf

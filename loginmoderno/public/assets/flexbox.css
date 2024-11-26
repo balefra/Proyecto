@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    min-height: auto;
+    padding: 20px;
+}
+
+.container >*{
+    border-radius: 10px;
+}
+
+.container{
+  
+    display: grid;
+    height: 100%;
+
+    
+#div1{
+    background-color: blue ;
+    grid-area: div1;
+}
+
+#div2{
+    background-color: rgb(0, 255, 76) ;
+    grid-area: div2;
+}
+
+#div3{
+    background-color: rgb(219, 100, 53) ;
+    grid-area: div3;
+}
+
+#div4{
+    background-color: rgb(255, 0, 157) ;
+    grid-area: div4;
+}
+
+#div5{
+    background-color: rgb(0, 255, 255) ;
+    grid-area: div5;
+}
+    /*divide en # columnas*/
+    grid-template-columns: 0.2fr 1fr 1fr 0.2fr;
+
+      /*divide en # filas*/
+      grid-template-rows: 0.2fr 0.4fr 4.5fr 1fr;
+
+      /*division de areas */
+      grid-template-areas: 
+      "div1 div1 div1 div1"
+      "div3 div2 div2 div4"
+      "div3 div5 div5 div4"
+      "div3 div5 div5 div4";
+
+      /*espaciado entre areas*/
+    row-gap: 0.2rem;
+    column-gap: 0.2rem;
+}
+
+
+@media (max-width: 768px) {
+    
+    .container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 0.05fr 0.02fr 2.0fr 0.02fr;
+        grid-template-areas: 
+        "div1"
+        "div2"
+        "div3"
+        "div5"
+        "div4"
+        ;
+    }
+    
+}
+
+.iberov, .utc {
+    width: 100px; /* Reduce el tamaño de los logos */
+    height: auto; /* Mantén la proporción */
+    margin: 10px auto; /* Centra verticalmente */
+    display: block; /* Asegura su comportamiento en móviles */
+}
