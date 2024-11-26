@@ -116,7 +116,7 @@ class PostController extends Controller
             "name_reality" => $request->categoria,
             "descrip_reality" => $request->descripcion
         ]);
-        return view('vistas.infoenfoque');
+        return view('vistas.infoenfoque',['id' => $registro]);
     }
 
 
@@ -125,7 +125,7 @@ class PostController extends Controller
         $registro->work()->update([
             "name_enfoque" => $request->enfoque
         ]);
-        return view('vistas.infoinvestigacion');
+        return view('vistas.infoinvestigacion',['id' => $registro]);
     }
 
     public function updateTecnicas(Request $request, Registro $registro)
@@ -135,6 +135,7 @@ class PostController extends Controller
             "resultado_Esperado" => $request->resultado,
             "tecnicas_Recoleccion" => $request->tecnicas
         ]);
+        return view('vistas.objetivoInvestigacion',['id' => $registro]);
     }
 
 
@@ -147,11 +148,11 @@ class PostController extends Controller
           if ($request->investigacion === "analitico") {
          // asi veo qeu pasan las variables de vbista a vista
            // echo($request->investigacion);
-            return view('analitico.vistaAnalitico'); 
+            return view('analitico.vistaAnalitico',['id' => $registro]); 
         } else if ($request->investigacion === "descriptivo") {
-            return view('descritivo.vistaDescriptivo');
+            return view('descritivo.vistaDescriptivo',['id' => $registro]);
         } else if ($request->investigacion === "intervencion") {
-            return view('intervencion.vistaIntervencion'); 
+            return view('intervencion.vistaIntervencion',['id' => $registro]); 
         } 
     }
 

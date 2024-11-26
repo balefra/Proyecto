@@ -20,7 +20,7 @@
 
 <body>
 
-    <form class="texto-just" action="/workInvesti/1" method='get'>
+    <form class="texto-just" action="/workInvesti/{{ $id->id }}" method='get'>
 
         <h1>Segundo paso de la formulación</h1>
 
@@ -55,7 +55,7 @@
         <!-- Botones en la parte inferior -->
         <center>
             <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Atrás</a>
-            <a onclick="redirigir({{ $id }})" class="btn5">Siguiente</a>
+            <a onclick="redirigir({{ $id}})" class="btn5">Siguiente</a>
         </center>
 
     </form>
@@ -97,11 +97,11 @@
 
         // Redirigir según el valor seleccionado
         if (investigacion === "analitico") {
-            window.location.href = "{{ route('vistaAnalitico', ['id' => "$id"]) }}";
+            window.location.href = "{{ route('vistaAnalitico', ['id' => "$id->id"]) }}";
         } else if (investigacion === "descriptivo") {
-            window.location.href = "{{ route('vistaDescriptivo', ['id' => "$id"]) }}";
+            window.location.href = "{{ route('vistaDescriptivo', ['id' => "$id->id"]) }}";
         } else if (investigacion === "intervencion") {
-            window.location.href = "{{ route('vistaIntervencion', ['id' => "$id"]) }}";
+            window.location.href = "{{ route('vistaIntervencion', ['id' => "$id->id"]) }}";
         } else {
             alert("Por favor, selecciona un tipo de investigación.");// -toca colocar las alert en todas las  pantllas
         }

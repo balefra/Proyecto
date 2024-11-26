@@ -21,7 +21,7 @@
 <body>
 
     <!-- Texto en el centro -->
-    <form class="texto-just" action="/workTecnicas/1" method='get'>
+    <form class="texto-just" action="/workTecnicas/{{ $id->id }}" method='get'>
 
         <h1>Tipo de Estudio </h1>
 

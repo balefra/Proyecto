@@ -22,7 +22,7 @@
    
 
     <!-- Texto en el centro -->
-    <form class="texto-just" action="/workEnfoque/1" method='get'>
+    <form class="texto-just" action="/workEnfoque/{{$id->id}}" method='get'>
 
         <h1>Segundo paso de la formulación</h1>
 
