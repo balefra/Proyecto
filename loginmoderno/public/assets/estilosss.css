@@ -7,7 +7,7 @@
 
 /* Fondo */
 body {
-    background-image: url('../assets/images/Fondoinicio.jpg'); /* Ruta de la imagen de fondo */
+  background-color: rgb(235, 244, 243); /* Ruta de la imagen de fondo */
     background-size: cover;
     background-position: center;
     min-height: 100vh;

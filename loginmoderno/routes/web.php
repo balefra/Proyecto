@@ -90,6 +90,9 @@ Route::get('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar.
 //traer datos al pdf
 Route::get('/infopdf/{registro}', [PDFController::class, 'generaridPDF']);
 
+
+Route::post('/tablaBuscar', [PostController::class, 'buscarPorCorreo2']);
+
 /*
 //email
 Route::get('/correo', function () {

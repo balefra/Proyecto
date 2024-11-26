@@ -20,6 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+      View::composer('vistas.informacionasociadas','App\Http\ViewComposers\ProyectoComposer');
       // View::share('buscar', 'vista.buscarProyecto.buscar');
     
     }

@@ -65,6 +65,17 @@ class PostController extends Controller
         );
     }
 
+     /**
+     * buscar las investigaciones que tiene asociado el correo 
+     */
+    public function buscarPorCorreo2(Request $request)
+    {
+        $registro = Registro::where('email', $request->buscar)->get();
+        return view('vistas.TablaBuscar', ['registro' => $registro]);
+        
+        
+    }
+
     /**
      * buscar las investigaciones que tiene asociado el correo 
      */

@@ -1,3 +1,45 @@
+/* Ajustes para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    body {
+        background-size: contain; /* Asegura que el fondo no se corte */
+    }
+
+    form {
+        width: 90%; /* Reduce el tamaño del formulario */
+        left: 5%; /* Centra horizontalmente */
+        padding: 30px 20px; /* Reduce los espacios */
+    }
+
+    .cabecera, .centrar {
+        position: static; /* Evita posiciones absolutas en móviles */
+        text-align: center; /* Centra el texto */
+        margin: 20px 0; /* Añade margen */
+    }
+
+    .input-wrapper, input, select {
+        width: 100%; /* Asegura que ocupen todo el ancho disponible */
+    }
+
+    .buttons-container {
+        width: 100%; /* Botones ajustados al tamaño */
+        left: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .iberov, .utc {
+        width: 100px; /* Reduce el tamaño de los logos */
+        height: auto; /* Mantén la proporción */
+        margin: 10px auto; /* Centra verticalmente */
+        display: block; /* Asegura su comportamiento en móviles */
+    }
+
+    .info-icon {
+        margin-left: auto; /* Ajusta posición del ícono de información */
+    }
+}
+
+
 /* Estilos básicos */
 * {
     margin: 0;
@@ -6,7 +48,7 @@
 }      
 /* fondo */
 body {
-    background-image: url('../assets/images/Fondoinicio.jpg'); /* Ruta de la imagen de fondo */
+    background-color: rgb(235, 244, 243); /* Ruta de la imagen de fondo */
     background-size: cover; /* Hace que la imagen cubra toda la pantalla */
     background-position: center; /* Centra la imagen */
    min-height: 100vh;

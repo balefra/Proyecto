@@ -22,6 +22,7 @@ class PDFController extends Controller
         // return $pdf->dowload('reporte.pdf');
         // Mostrar el PDF en el navegador (stream)
         return $pdf->stream('reporte.pdf');
+ 
     }
 
 
@@ -30,7 +31,9 @@ class PDFController extends Controller
     {
 
 
-        $proyecto = Registro::with('departamento','municipio')->get();
+        $proyecto = Registro::with('departamento','municipio')
+        ->where('id',$registro)
+        ->get();
 
     
         $pdf = PDF::loadView('pdf.pdf', ['proyecto' => $proyecto]);
