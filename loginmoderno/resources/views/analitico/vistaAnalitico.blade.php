@@ -10,107 +10,96 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('assets/estilosss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/flexbox.css') }}">
 
 </head>
-<div class="container">
-    <img src="{{ asset('assets/images/iberov2.png') }}" class="logo-izquierda">
-    <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="logo-derecha">
-</div>
-
-<body>
-
-    <!-- Texto en el centro -->
-    <form class="texto-just" action="/workTecnicas/{{ $id->id }}" method='get'>
-
-        <h1>Tipo de Estudio </h1>
-
-        <br />
-        <br />
-        <p> 
-        </p>
-        <br />
 
 
+<body class="container">
 
-        <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
-            <option value="">Seleccione un tipo de estudio</option>
-            <option value="observacionales">Observacionales</option>
-            <option value="exploratorio">Exploratorio</option>
-            <option value="experimentales">Experimentales</option>
+    <div id="div1">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov" align= "left">
+        <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc" align= "right">
+    </div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5">
+        <form class="texto-just" action="/workTecnicas/{{ $id->id }}" method='get'>
 
-        </select>
-        <br />
-        <br />
+            <h1>Tipo de Estudio </h1>
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-        </em>
-
-        <h1>Resultado Esperado </h1>
-
-        <br />
-        <br />
-        <p> 
-        </p>
-        <br />
+            <br />
 
 
+            <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
+                <option value="">Seleccione un tipo de estudio</option>
+                <option value="observacionales">Observacionales</option>
+                <option value="exploratorio">Exploratorio</option>
+                <option value="experimentales">Experimentales</option>
 
-        <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
-            <option value="">Seleccione el resultado esperado</option>
-            <option value="observacionales">Observacionales</option>
-            <option value="exploratorio">Exploratorio</option>
-            <option value="experimentales">Experimentales</option>
+            </select>
+            <br />
             
-        </select>
-        <br />
-        <br />
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTextoResultado" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <h1>Resultado Esperado </h1>
 
-        <h1>Técnicas de Recolección y Análisis de Información Asociadas </h1>
+            <br />
 
-        <br />
-        <br />
-        <p>
-        </p>
-        <br />
+            <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
+                <option value="">Seleccione el resultado esperado</option>
+                <option value="observacionales">Observacionales</option>
+                <option value="exploratorio">Exploratorio</option>
+                <option value="experimentales">Experimentales</option>
+
+            </select>
+            <br />
+
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTextoResultado" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <h1>Técnicas de Recolección y Análisis de Información Asociadas </h1>
+
+            <br />
+           
 
 
 
-        <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
-            <option value="">Seleccione recolección y análisis</option>
-            <option value="observacionales">Observacionales</option>
-            <option value="exploratorio">Exploratorio</option>
-            <option value="experimentales">Experimentales</option>
+            <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
+                <option value="">Seleccione recolección y análisis</option>
+                <option value="observacionales">Observacionales</option>
+                <option value="exploratorio">Exploratorio</option>
+                <option value="experimentales">Experimentales</option>
+
+            </select>
+            <br />
             
-        </select>
-        <br />
-        <br />
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTextoTecnica" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTextoTecnica" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
 
+            <!-- Guardar datos -->
+            <input class="btnEnviar" type="submit" name="register" value="Guardar">
 
-        <!-- Guardar datos -->
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">
+            <!-- Botones en la parte inferior -->
+            <center>
+                <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
+                <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
+            </center>
 
-        <!-- Botones en la parte inferior -->
-        <center>
-            <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
-            <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
-        </center>
+        </form>
 
-    </form>
-
-
+    </div>
 
 </body>
 
@@ -170,7 +159,7 @@
                 ejemploTextoResultado.innerHTML =
                     "Documento académico que da cuenta de las variación en el comportamiento, costumbres o reacciones de un sujeto o grupos de sujetos en la medida que el investigador manipula una o varias variables (tiempo, ambiente, características de los sujetos, dinámicas ...) de la realidad investigada generando nuevas posibles realidades o situaciones,  en este documento el investigador induce o deduce relaciones de significado y sentido entre los comportamientos, costumbres y reacciones para cada posible realidad o situación generada por la manipulación de variables,  mostrándolas de manera concluyente y sistemática (estructurada,  objetiva  y argumentada) como regularidades, tendencias,";
                 break;
-          
+
             default:
                 ejemploTextoResultado.innerHTML = "";
         }
@@ -186,7 +175,7 @@
         // Mostrar el texto del ejemplo dependiendo del resultado seleccionado
         switch (tecnicas) {
             case "observacionales":
-    ejemploTextoTecnica.innerHTML = `
+                ejemploTextoTecnica.innerHTML = `
         <strong>Fuentes primarias</strong><br>
         .- <strong>Observación no participante:</strong> Diario de campo, en el cual se registran los comportamientos, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones de los sujetos o comunidad en relación con dimensiones de análisis de una determinada realidad educativa.<br><br>
         .- <strong>Entrevistas:</strong><br>
@@ -195,17 +184,17 @@
         Documentos preexistentes que den cuenta de comportamientos, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones de los sujetos o comunidad frente a una determinada realidad educativa, teniendo como categorías de indagación las dimensiones de análisis previamente determinadas.<br><br>
         .- <strong>Análisis de registros audiovisuales</strong>
     `;
-    break;
+                break;
 
-case "exploratorio":
-    ejemploTextoTecnica.innerHTML = `
+            case "exploratorio":
+                ejemploTextoTecnica.innerHTML = `
         <strong>(Estudio de caso)</strong><br>
         Documento académico que presenta la descripción del fenómeno y la aproximación a la comprensión del mismo, proyectando hipótesis y/o preguntas de investigación válidas para ser abordadas en otras investigaciones.
     `;
-    break;
+                break;
 
-case "experimentales":
-    ejemploTextoTecnica.innerHTML = `
+            case "experimentales":
+                ejemploTextoTecnica.innerHTML = `
         <strong>Fuentes primarias</strong><br>
         .- <strong>Observación no participante:</strong> Diario de campo, en el cual se registran los comportamientos, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones de los sujetos o comunidad en relación con la manipulación de variables de la realidad educativa investigada.<br><br>
         .- <strong>Entrevistas:</strong><br>
@@ -217,7 +206,7 @@ case "experimentales":
         .- <strong>Análisis de registros audiovisuales</strong><br><br>
         Documento académico que da cuenta de la variación en el comportamiento, costumbres o reacciones de un sujeto o grupos de sujetos en la medida que el investigador manipula una o varias variables (tiempo, ambiente, características de los sujetos, dinámicas, etc.) de la realidad investigada, generando nuevas posibles realidades o situaciones. En este documento, el investigador induce o deduce relaciones de significado y sentido entre los comportamientos, costumbres y reacciones para cada posible realidad o situación generada por la manipulación de variables, mostrándolas de manera concluyente y sistemática (estructurada, objetiva y argumentada) como regularidades y tendencias.
     `;
-    break;
+                break;
 
 
 

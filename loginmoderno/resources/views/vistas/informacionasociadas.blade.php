@@ -10,71 +10,78 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('assets/estilosss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/flexbox.css') }}">
 
 </head>
-<div class="container">
-    <img src="{{ asset('assets/images/iberov2.png') }}" class="logo-izquierda">
-    <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="logo-derecha">
-</div>
 
-<body>
 
-    
-    <!-- Texto en el centro -->
-    <form class="texto-just" action="/workReality/{{ $id }}" method='get'>
+<body class="container">
 
+    <div id="div1">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov" align= "left">
+        <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc" align= "right">
+    </div>
+    <div id="div2">
         <h1>Primer paso de la formulación</h1>
+    </div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5">
+        <!-- Texto en el centro -->
+        <form class="texto-just" action="/workReality/{{ $id }}" method='get'>
 
-        <br />
-        <br />
-        <p> Teniendo en cuenta las definiciones y ejemplos de realidad escolar, es importante seleccionar de acuerdo con
-            su propia realidad e intencionalidad investigativa la realidad concreta a investigar.</p>
-        <br />
+            
 
-
-
-        <select id="categoria" name="categoria" onclick="mostrarEjemplo()" required>
-            <option value="">Seleccione una realidad</option>
-            <option value="fenomeno">Fenómeno</option>
-            <option value="necesidad">Necesidad</option>
-            <option value="problematica">Problemática</option>
-            <option value="experiencia">Experiencia</option>
-        </select>
-        <br />
-        <br />
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-        </em>
-        <br />
-        <br />
-        <p>Teniendo en cuenta su selección, por favor redacte la formulación de su realidad. </p>
-        <br />
+            <br />
+            <br />
+            <p> Teniendo en cuenta las definiciones y ejemplos de realidad escolar, es importante seleccionar de acuerdo
+                con
+                su propia realidad e intencionalidad investigativa la realidad concreta a investigar.</p>
+            <br />
 
 
-        <textarea rows="7" cols="82" id="descripcion" name="descripcion"
-            placeholder="De acuerdo al ejemplo, redacte aqui."></textarea>
 
-        <!-- Guardar datos -->
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">
+            <select id="categoria" name="categoria" onclick="mostrarEjemplo()" required>
+                <option value="">Seleccione una realidad</option>
+                <option value="fenomeno">Fenómeno</option>
+                <option value="necesidad">Necesidad</option>
+                <option value="problematica">Problemática</option>
+                <option value="experiencia">Experiencia</option>
+            </select>
+            <br />
+            <br />
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <br />
+            <p>Teniendo en cuenta su selección, por favor redacte la formulación de su realidad. </p>
+            <br />
 
-        <!-- Botones en la parte inferior -->
-        <center>
-            <a href="{{ route('inforealidades', ['id' => $id]) }}" class="btn5">Atrás</a>
-            <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Siguiente</a>
-        </center>
 
-        
-    </form>
-<!--
+            <textarea rows="7" cols="82" id="descripcion" name="descripcion"
+                placeholder="De acuerdo al ejemplo, redacte aqui."></textarea>
+
+            <!-- Guardar datos -->
+            <input class="btnEnviar" type="submit" name="register" value="Guardar">
+
+            <!-- Botones en la parte inferior -->
+            <center>
+                <a href="{{ route('inforealidades', ['id' => $id]) }}" class="btn5">Atrás</a>
+                <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Siguiente</a>
+            </center>
+
+
+        </form>
+        <!--
     <div class="savePdf">
         <input class="btnEnviar" type="submit" name="register" value="DescargarPDF">
 
        <img src="{{ 'assets/images/descargar-pdf.png' }}"/>
     </div>
 -->
-
+    </div>
 </body>
 
 

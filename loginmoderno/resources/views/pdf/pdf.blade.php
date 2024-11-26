@@ -84,15 +84,15 @@
             <br>
             <h3>Tipo de estudio</h3>
 
-            <div><span>--tipo de estudio sel--- </span></div>
+            <div><span>{{ $pro->work->tipo_Estudio }}</span></div>
             <br>
             <h3>Resultado Esperado </h3>
 
-            <div><span>--es esp sel--- </span></div>
+            <div><span>{{ $pro->work->resultado_Esperado }} </span></div>
             <br>
             <h3>Técnicas de recolección y análisis de información asociadas </h3>
 
-            <div><span>--teco sel--- </span></div>
+            <div><span>{{ $pro->work->tecnicas_Recoleccion }} </span></div>
             <br>
 
         </main>

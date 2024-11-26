@@ -10,56 +10,61 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('assets/estilosss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/flexbox.css') }}">
 
 </head>
-<div class="container">
-    <img src="{{ asset('assets/images/iberov2.png') }}" class="logo-izquierda">
-    <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="logo-derecha">
-</div>
 
-<body>
 
-    <form class="texto-just" action="/workInvesti/{{ $id->id }}" method='get'>
+<body class="container">
 
+    <div id="div1">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov" align= "left">
+        <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc" align= "right">
+    </div>
+    <div id="div2">
         <h1>Segundo paso de la formulación</h1>
+    </div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5">
 
-        <br />
-        <br />
-        <p> A continuación, es importante reconocer y seleccionar el tipo de investigación </p>
-        <br />
-        <p>  Los tipos de investigación son:
-        </p>
-        <br />
+        <form class="texto-just" action="/workInvesti/{{ $id->id }}" method='get'>
 
-
-        <select id="investigacion" name="investigacion" onclick="mostrarEjemplo()" required>
-            <option value="">Seleccione un investigación</option>
-            <option value="analitico">Analíticos</option>
-            <option value="descriptivo">Descriptivos</option>
-            <option value="intervencion">De intervención</option>
-        </select>
-        <br />
-        <br />
-
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <br />
+            <p> A continuación, es importante reconocer y seleccionar el tipo de investigación </p>
+            <br />
+            <p> Los tipos de investigación son:
+            </p>
+            <br />
 
 
+            <select id="investigacion" name="investigacion" onclick="mostrarEjemplo()" required>
+                <option value="">Seleccione un investigación</option>
+                <option value="analitico">Analíticos</option>
+                <option value="descriptivo">Descriptivos</option>
+                <option value="intervencion">De intervención</option>
+            </select>
+            <br />
+            <br />
 
-        <!-- Guardar datos -->
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
+            </em>
 
-        <!-- Botones en la parte inferior -->
-        <center>
-            <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Atrás</a>
-            <a onclick="redirigir({{ $id}})" class="btn5">Siguiente</a>
-        </center>
 
-    </form>
 
+            <!-- Guardar datos -->
+            <input class="btnEnviar" type="submit" name="register" value="Guardar">
+
+            <!-- Botones en la parte inferior -->
+            <center>
+                <a href="{{ route('infoenfoque', ['id' => $id]) }}" class="btn5">Atrás</a>
+                <a onclick="redirigir({{ $id }})" class="btn5">Siguiente</a>
+            </center>
+
+        </form>
+    </div>
 
 
 </body>
@@ -92,6 +97,7 @@
         // Hacer visible el texto del ejemplo
         ejemploTexto.style.display = "block";
     }
+
     function redirigir($id) {
         const investigacion = document.getElementById("investigacion").value;
 
@@ -103,7 +109,7 @@
         } else if (investigacion === "intervencion") {
             window.location.href = "{{ route('vistaIntervencion', ['id' => "$id->id"]) }}";
         } else {
-            alert("Por favor, selecciona un tipo de investigación.");// -toca colocar las alert en todas las  pantllas
+            alert("Por favor, selecciona un tipo de investigación."); // -toca colocar las alert en todas las  pantllas
         }
     }
 </script>

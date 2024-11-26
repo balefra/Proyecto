@@ -10,106 +10,88 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('assets/estilosss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/flexbox.css') }}">
 
 </head>
-<div class="container">
-    <img src="{{ asset('assets/images/iberov2.png') }}" class="logo-izquierda">
-    <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="logo-derecha">
-</div>
-
-<body>
-
-    <!-- Texto en el centro -->
-    <form class="texto-just" action="/workTecnicas/{{ $id->id }}" method='get'>
-
-        <h1>Tipo de Estudio </h1>
-
-        <br />
-        <br />
-        <p>
-        </p>
-        <br />
 
 
+<body class="container">
 
-        <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
-            <option value="">Seleccione un tipo de estudio</option>
-            <option value="historico">Histórico o retrospectivo</option>
-            <option value="descriptivo">Descriptivo (propiamente dicho) o prospectivo</option>
-        </select>
-        <br />
-        <br />
+    <div id="div1">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov" align= "left">
+        <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc" align= "right">
+    </div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5">
+        <!-- Texto en el centro -->
+        <form class="texto-just" action="/workTecnicas/{{ $id->id }}" method='get'>
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <h1>Tipo de Estudio </h1>
+            <br />
+            <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
+                <option value="">Seleccione un tipo de estudio</option>
+                <option value="historico">Histórico o retrospectivo</option>
+                <option value="descriptivo">Descriptivo (propiamente dicho) o prospectivo</option>
+            </select>
+            <br />
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <h1>Resultado Esperado </h1>
 
-        <h1>Resultado Esperado </h1>
+            <br />
 
-        <br />
-        <br />
-        <p>
-        </p>
-        <br />
+            <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
+                <option value="">Seleccione un tipo de estudio</option>
+                <option value="estudio"> Estudio de impacto</option>
+                <option value="biografias">Biografía</option>
+                <option value="Compilacion">Compilación de experiencia(s)</option>
+                <option value="narrativas">Narrativas</option>
+                <option value="descriptivo">Descriptivo</option>
+            </select>
+            <br />
 
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTextoResultado" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <h1>Técnicas de Recolección y Análisis de Información Asociadas </h1>
 
+            <br />
 
-        <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
-            <option value="">Seleccione un tipo de estudio</option>
-            <option value="estudio"> Estudio de impacto</option>
-            <option value="biografias">Biografía</option>
-            <option value="Compilacion">Compilación de experiencia(s)</option>
-            <option value="narrativas">Narrativas</option>
-            <option value="descriptivo">Descriptivo</option>
-        </select>
-        <br />
-        <br />
+            <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
+                <option value="">Seleccione un tipo de estudio</option>
+                <option value="estudio"> Estudio de impacto</option>
+                <option value="biografias">Biografía</option>
+                <option value="Compilacion">Compilación de experiencia(s)</option>
+                <option value="narrativas">Narrativas</option>
+            </select>
+            <br />
+            <br />
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTextoResultado" style="display:none; margin-top: 10px;"></p>
-        </em>
-
-        <h1>Técnicas de Recolección y Análisis de Información Asociadas </h1>
-
-        <br />
-        <br />
-        <p> 
-        </p>
-        <br />
-
-
-
-        <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
-            <option value="">Seleccione un tipo de estudio</option>
-            <option value="estudio"> Estudio de impacto</option>
-            <option value="biografias">Biografía</option>
-            <option value="Compilacion">Compilación de experiencia(s)</option>
-            <option value="narrativas">Narrativas</option>
-        </select>
-        <br />
-        <br />
-
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTextoTecnica" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTextoTecnica" style="display:none; margin-top: 10px;"></p>
+            </em>
 
 
-        <!-- Guardar datos -->
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">
+            <!-- Guardar datos -->
+            <input class="btnEnviar" type="submit" name="register" value="Guardar">
 
-        <!-- Botones en la parte inferior -->
-        <center>
-            <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
-            <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
-        </center>
-       
+            <!-- Botones en la parte inferior -->
+            <center>
+                <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
+                <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
+            </center>
 
-    </form>
 
+        </form>
+    </div>
 
 
 </body>

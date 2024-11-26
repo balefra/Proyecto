@@ -10,108 +10,93 @@
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('assets/estilosss.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/flexbox.css') }}">
 
 </head>
-<div class="container">
-    <img src="{{ asset('assets/images/iberov2.png') }}" class="logo-izquierda">
-    <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="logo-derecha">
-</div>
-
-<body>
-
-    <!-- Texto en el centro -->
-    <form class="texto-just"  action="/workTecnicas/{{ $id->id }}" method='get'>
-
-        <h1>Tipo de Estudio </h1>
-
-        <br />
-        <br />
-        <p>
-        </p>
-        <br />
 
 
+<body class="container">
 
-        <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
-            <option value="">Seleccione un tipo de estudio</option>
-            <option value="accion">Investigación Acción</option>
-            <option value="educativa">Proyectos de Innovación educativa</option>
-            <option value="participcion">Investigación Acción participación </option>
+    <div id="div1">
+        <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov" align= "left">
+        <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc" align= "right">
+    </div>
+    <div id="div2"></div>
+    <div id="div3"></div>
+    <div id="div4"></div>
+    <div id="div5"><!-- Texto en el centro -->
+        <form class="texto-just" action="/workTecnicas/{{ $id->id }}" method='get'>
 
-        </select>
-        <br />
-        <br />
+            <h1>Tipo de Estudio </h1>
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <br />
+           
+            <select id="enfoque" name="enfoque" onclick="mostrarEjemplo()" required>
+                <option value="">Seleccione un tipo de estudio</option>
+                <option value="accion">Investigación Acción</option>
+                <option value="educativa">Proyectos de Innovación educativa</option>
+                <option value="participcion">Investigación Acción participación </option>
 
-        <h1>Resultado Esperado </h1>
+            </select>
+            <br />
+            
 
-        <br />
-        <br />
-        <p> 
-        </p>
-        <br />
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTexto" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <h1>Resultado Esperado </h1>
 
-
-
-        <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
-            <option value="">Seleccione el resultado esperado</option>
-            <option value="accion">Investigación Acción</option>
-            <option value="educativa">Proyectos de Innovación educativa</option>
-            <option value="participcion">Investigación Acción participación </option>
-
-
-        </select>
-        <br />
-        <br />
-
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTextoResultado" style="display:none; margin-top: 10px;"></p>
-        </em>
-
-        <h1>Técnicas de Recolección y Análisis de Información Asociadas </h1>
-
-        <br />
-        <br />
-        <p> 
-        </p>
-        <br />
+            <br />
+            
+            <select id="resultado" name="resultado" onclick="mostrarTextoResultado()" required>
+                <option value="">Seleccione el resultado esperado</option>
+                <option value="accion">Investigación Acción</option>
+                <option value="educativa">Proyectos de Innovación educativa</option>
+                <option value="participcion">Investigación Acción participación </option>
 
 
+            </select>
+            <br />
+            
 
-        <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
-            <option value="">Seleccione recolección y análisis</option>
-            <option value="accion">Investigación Acción</option>
-            <option value="educativa">Proyectos de Innovación educativa</option>
-            <option value="participcion">Investigación Acción participación </option>
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTextoResultado" style="display:none; margin-top: 10px;"></p>
+            </em>
+            <br />
+            <h1>Técnicas de Recolección y Análisis de Información Asociadas </h1>
+
+            <br />
+
+            <select id="tecnicas" name="tecnicas" onclick="mostrarTextoTecnica()" required>
+                <option value="">Seleccione recolección y análisis</option>
+                <option value="accion">Investigación Acción</option>
+                <option value="educativa">Proyectos de Innovación educativa</option>
+                <option value="participcion">Investigación Acción participación </option>
 
 
-        </select>
-        <br />
-        <br />
+            </select>
+            <br />
 
-        <!-- Contenedor donde aparecerá la descripción del ejemplo -->
-        <em>
-            <p id="ejemploTextoTecnica" style="display:none; margin-top: 10px;"></p>
-        </em>
+            <!-- Contenedor donde aparecerá la descripción del ejemplo -->
+            <em>
+                <p id="ejemploTextoTecnica" style="display:none; margin-top: 10px;"></p>
+            </em>
 
+            <br />
+            <!-- Guardar datos -->
+            <input class="btnEnviar" type="submit" name="register" value="Guardar">
 
-        <!-- Guardar datos -->
-        <input class="btnEnviar" type="submit" name="register" value="Guardar">
+            <!-- Botones en la parte inferior -->
+            <center>
+                <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
+                <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
+            </center>
 
-        <!-- Botones en la parte inferior -->
-        <center>
-            <a href="{{ route('infoinvestigacion', ['id' => $id]) }}" class="btn5">Atrás</a>
-            <a href="{{ route('objetivoInvestigacion', ['id' => $id]) }}" class="btn5">Siguiente</a>
-        </center>
-
-    </form>
-
+        </form>
+    </div>
 
 
 </body>
@@ -173,13 +158,16 @@
         switch (resultado) {
 
             case "accion":
-                ejemploTextoResultado.innerHTML = "Documento académico que da cuenta de manera paralela  primero, la comprensión de una realidad y segundo, la toma de conciencia, transformación y empoderamiento de los sujetos (o comunidad) como resultado de la reflexión y comprensión de sus comportamiento, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones frente a determinada realidad educativa.";
+                ejemploTextoResultado.innerHTML =
+                    "Documento académico que da cuenta de manera paralela  primero, la comprensión de una realidad y segundo, la toma de conciencia, transformación y empoderamiento de los sujetos (o comunidad) como resultado de la reflexión y comprensión de sus comportamiento, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones frente a determinada realidad educativa.";
                 break;
             case "educativa":
-                ejemploTextoResultado.innerHTML = "Documento académico que da cuenta de la identificación de la problemática o la necesidad educativa y el diseño  y/o implementación de una estrategia innovadora  que supla una necesidad educativa o resuelva una problemática educativa en particular, este documento incluye la documentación de diseño y pilotaje del  mismo.";
+                ejemploTextoResultado.innerHTML =
+                    "Documento académico que da cuenta de la identificación de la problemática o la necesidad educativa y el diseño  y/o implementación de una estrategia innovadora  que supla una necesidad educativa o resuelva una problemática educativa en particular, este documento incluye la documentación de diseño y pilotaje del  mismo.";
                 break;
             case "participcion":
-                ejemploTextoResultado.innerHTML = "Documento académico que da cuenta de manera paralela primero, la comprensión de una realidad y segundo, la toma de conciencia, transformación y empoderamiento de los sujetos (o comunidad) incluido el propio investigador  como resultado de la reflexión y comprensión de sus comportamiento, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones frente a determinada realidad educativa.";
+                ejemploTextoResultado.innerHTML =
+                    "Documento académico que da cuenta de manera paralela primero, la comprensión de una realidad y segundo, la toma de conciencia, transformación y empoderamiento de los sujetos (o comunidad) incluido el propio investigador  como resultado de la reflexión y comprensión de sus comportamiento, costumbres, reacciones, emociones, experiencias, razonamientos o percepciones frente a determinada realidad educativa.";
                 break;
 
 
