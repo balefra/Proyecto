@@ -94,6 +94,17 @@
 
             <div><span>{{ $pro->work->tecnicas_Recoleccion }} </span></div>
             <br>
+            <h2>Objetivos </h2>
+            <h3>General </h3>
+            <div><span>{{ $pro->goal->general_Goal }} </span></div>
+            <br>
+            <h3>Especificos </h3>
+
+            <div><span>{{ $pro->goal->specific_Goal1 }} </span></div>
+            <div><span>{{ $pro->goal->specific_Goal2 }} </span></div>
+            <div><span>{{ $pro->goal->specific_Goal3 }} </span></div>
+            <div><span>{{ $pro->goal->specific_Goal4 }} </span></div>
+            <br>
 
         </main>
     @endforeach

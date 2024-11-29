@@ -82,13 +82,15 @@ Route::get('/objetivoInvestigacion/{id}', function ($id) {
     return view('vistas.objetivoInvestigacion',compact('id'));
 })->name('objetivoInvestigacion');
 
+Route::get('/objetivoInvestigacion2/{id}', function ($id) {
+    return view('vistas.objetivoInvestigacion2',compact('id'));
+})->name('objetivoInvestigacion2');
 
 Route::get('/flex', function () {
     return view('vistas.pruebaflex');
 })->name('pruebaflex');
 
 
-Route::get('/departamentos', [DepartamentController::class, 'index']);
 
 //pdf
 Route::get('/generar-pdf', [PDFController::class, 'generarPDF'])->name('generar.pdf');
@@ -127,5 +129,6 @@ Route::get('/workReality/{registro}', [PostController::class, 'update']);
 Route::get('/workEnfoque/{registro}', [PostController::class, 'updateEnfoque']);
 Route::get('/workInvesti/{registro}', [PostController::class, 'updateInvesti']);
 Route::get('/workTecnicas/{registro}', [PostController::class, 'updateTecnicas']);
+Route::get('/objetivos/{registro}', [PostController::class, 'updateObjetivos']);
 
 Route::post('/proyecto', [PostController::class, 'buscarPorCorreo']);

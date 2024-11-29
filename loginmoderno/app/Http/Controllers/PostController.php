@@ -46,6 +46,8 @@ class PostController extends Controller
             ]);
         }
 
+        $registro->goal()->create();
+
 
 
         return view('home');
@@ -135,7 +137,10 @@ class PostController extends Controller
             "resultado_Esperado" => $request->resultado,
             "tecnicas_Recoleccion" => $request->tecnicas
         ]);
-        return view('vistas.objetivoInvestigacion',['id' => $registro]);
+
+        $tipoInvestigacion = $registro->work()->get();
+
+        return view('vistas.objetivoInvestigacion',['id' => $registro],['tipoInvestigacion' => $tipoInvestigacion]);
     }
 
 
@@ -155,6 +160,23 @@ class PostController extends Controller
             return view('intervencion.vistaIntervencion',['id' => $registro]); 
         } 
     }
+
+    public function updateObjetivos(Request $request, Registro $registro)
+    {
+       
+
+        $registro->goal()->update([
+            "general_Goal" => $request->oGeneral,       
+            "specific_Goal1" => $request->oEspecifico1,
+            "specific_Goal2" => $request->oEspecifico2,
+            "specific_Goal3" => $request->oEspecifico3,
+            "specific_Goal4" => $request->oEspecifico4
+        ]);
+         
+    return view('home'); 
+       
+    }
+
 
     /**
      * Remove the specified resource from storage.

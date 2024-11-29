@@ -36,6 +36,11 @@ class Registro extends Model
             return $this->hasMany(Integrant::class, 'id_registro','id');
         }
 
+         //relacion uno a uno
+         public function goal(){
+            return $this->hasOne(Goal::class, 'id_registro','id');
+        }
+
 
 
 }

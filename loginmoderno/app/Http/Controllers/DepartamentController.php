@@ -33,7 +33,7 @@ class DepartamentController extends Controller
     public function departaments(Request $request)
     {
         $departaments = Departament::whereId_country( $request->texto )->get();
-        return response()->json( 
+        return response()->json(
             [
                 'lista'=> $departaments,
 
