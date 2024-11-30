@@ -78,6 +78,14 @@ class PostController extends Controller
         
     }
 
+    public function buscarPorCorreoDocente(Request $request)
+    {
+        $registro = Registro::where('email', $request->buscar)->get();
+        return view('docente.TablaBuscarDocente', ['registro' => $registro]);
+        
+        
+    }
+
     /**
      * buscar las investigaciones que tiene asociado el correo 
      */

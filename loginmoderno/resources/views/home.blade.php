@@ -33,6 +33,15 @@
         <div id="div1">
             <img src="{{ asset('assets/images/iberov2.png') }}" class="iberov" align= "left">
             <img src="{{ asset('assets/images/uNIVERSIDA TRES CULTURAS.png') }}" class="utc" align= "right">
+            <button class="dropdown-item" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                     document.getElementById('logout-form').submit();">
+        {{ __('cerrar aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasesión') }}
+    </button>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
         </div>
         <div id="div2">
             <h1>Virtual <span class="highlight">Research Assistant</span></h1>

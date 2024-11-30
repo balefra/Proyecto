@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 
 
 class HomeController extends Controller
@@ -22,6 +24,23 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+    {
+        if (Auth::check()) {
+            if (Auth::user()->role == 'admin') {
+                return redirect()->to('/redirigirAdmin');
+            } else {
+                return redirect()->to('/redirigirEstudiante');
+            }
+        }
+        return redirect()->to('/');
+    }
+
+    public function admin()
+    {
+        return view('docente.docente');
+    }
+
+    public function estudiante()
     {
         return view('home');
     }

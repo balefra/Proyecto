@@ -1,11 +1,14 @@
 <?php
 
+
 use App\Http\Controllers\InvestigationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\DepartamentController;
 use App\Http\Controllers\MunicipalityController;
 use App\Http\Controllers\WorkaController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
 //use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use App\Http\Controllers\PDFController;
 use App\Mail\EnvioCorreo;
@@ -17,11 +20,21 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//Route::post('/dirigir', [LoginController::class, 'dirigir']);
+
+Route::get('/admin',[AdminController::class,'index'])
+->middleware(App\Http\Middleware\AdminAuth::class)
+->name('admin.index');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/redirigirAdmin', [App\Http\Controllers\HomeController::class, 'admin'])->name('home');
+Route::get('/redirigirEstudiante', [App\Http\Controllers\HomeController::class, 'estudiante'])->name('home');
 
 Route::get('/crear', function () {
     return view('posts.Crear');
 })->name('Crear');
+
 
 
 
@@ -35,25 +48,25 @@ Route::get('/tipoestudio', function () {
 })->name('tipoestudio');
 
 Route::get('/formacionproyecto/{id}', function ($id) {
-    return view('vistas.formacionproyecto',compact('id'));
+    return view('vistas.formacionproyecto', compact('id'));
 })->name('formacionproyecto');
 
 Route::get('/inforealidades/{id}', function ($id) {
-    return view('vistas.inforealidades',compact('id'));
+    return view('vistas.inforealidades', compact('id'));
 })->name('inforealidades');
 
 Route::get('/informacionasociadas/{id}', function ($id) {
-    return view('vistas.informacionasociadas',compact('id'));
+    return view('vistas.informacionasociadas', compact('id'));
 })->name('informacionasociadas');
 
 
 
 Route::get('/infoenfoque/{id}', function ($id) {
-    return view('vistas.infoenfoque',compact('id'));
+    return view('vistas.infoenfoque', compact('id'));
 })->name('infoenfoque');
 
 Route::get('/infoinvestigacion/{id}', function ($id) {
-    return view('vistas.infoinvestigacion',compact('id'));
+    return view('vistas.infoinvestigacion', compact('id'));
 })->name('infoinvestigacion');
 
 Route::get('/enfoque', function () {
@@ -63,15 +76,15 @@ Route::get('/enfoque', function () {
 // vista dependiendo de tipo de investigación
 
 Route::get('/vistaAnalitico/{id}', function ($id) {
-    return view('analitico.vistaAnalitico',compact('id'));
+    return view('analitico.vistaAnalitico', compact('id'));
 })->name('vistaAnalitico');
 
 Route::get('/vistaIntervencion/{id}', function ($id) {
-    return view('intervencion.vistaIntervencion',compact('id'));
+    return view('intervencion.vistaIntervencion', compact('id'));
 })->name('vistaIntervencion');
 
 Route::get('/vistaDescriptivo/{id}', function ($id) {
-    return view('descritivo.vistaDescriptivo',compact('id'));
+    return view('descritivo.vistaDescriptivo', compact('id'));
 })->name('vistaDescriptivo');
 
 Route::get('/buscarProyecto', function () {
@@ -79,16 +92,17 @@ Route::get('/buscarProyecto', function () {
 })->name('buscarProyecto');
 
 Route::get('/objetivoInvestigacion/{id}', function ($id) {
-    return view('vistas.objetivoInvestigacion',compact('id'));
+    return view('vistas.objetivoInvestigacion', compact('id'));
 })->name('objetivoInvestigacion');
 
 Route::get('/objetivoInvestigacion2/{id}', function ($id) {
-    return view('vistas.objetivoInvestigacion2',compact('id'));
+    return view('vistas.objetivoInvestigacion2', compact('id'));
 })->name('objetivoInvestigacion2');
 
 Route::get('/flex', function () {
     return view('vistas.pruebaflex');
 })->name('pruebaflex');
+
 
 
 
@@ -100,6 +114,10 @@ Route::get('/infopdf/{registro}', [PDFController::class, 'generaridPDF']);
 
 
 Route::post('/tablaBuscar', [PostController::class, 'buscarPorCorreo2']);
+
+Route::post('/tablaBuscarDocente', [PostController::class, 'buscarPorCorreoDocente']);
+
+
 
 /*
 //email
